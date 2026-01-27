@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Ukrainian",
+  "Code": "uk",
+  "Flags": 0,
+  "Term": "LANG/UKRAINIAN",
+  "Translations": [
+    "Ukrainian", "Ukrainien", "Ukrainisch", "Ucraniano",
+    "ウクライナ語", "우크라이나어", "Ukraiński", "Украинский",
+    "Ucraniano", "乌克兰语", "烏克蘭語", "Українська"
+  ],
+  "FillerPrefix": "NeedUA ",
+  "CopyFromIndex": 0,
+  "FontCopyFromLanguage": "Russian"
+}

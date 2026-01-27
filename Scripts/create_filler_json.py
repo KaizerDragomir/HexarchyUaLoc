@@ -64,7 +64,7 @@ def process_terms(terms, lang_index, settings, languages):
     filler_prefix = settings.get('FillerPrefix', "Need ")
     copy_from = settings.get('CopyFromIndex', 0)
     
-    font_copy_lang = settings.get('FontCopyFromLanguage', "Russian")
+    font_copy_lang = settings.get('FontCopyFromLanguage', "English")
     font_copy_from = get_lang_index(languages, font_copy_lang)
     
     if font_copy_from == -1:
@@ -107,12 +107,6 @@ def ensure_lang_term(terms, settings):
     if any(term.get('Term') == lang_term_name for term in terms):
         return False
         
-    insertion_idx = -1
-    for i, term in enumerate(terms):
-        if term.get('Term') == 'LANG/RUSSIAN':
-            insertion_idx = i + 1
-            break
-    
     new_term = {
         "Term": lang_term_name,
         "TermType": 0,
@@ -127,10 +121,7 @@ def ensure_lang_term(terms, settings):
         }
     }
     
-    if insertion_idx != -1:
-        terms.insert(insertion_idx, new_term)
-    else:
-        terms.append(new_term)
+    terms.append(new_term)
     return True
 
 
@@ -156,10 +147,16 @@ def create_filler_json():
     term_added = ensure_lang_term(terms, settings)
     
     if lang_added or updated_terms_count > 0 or term_added:
-        save_json(input_file, data)
+        output_dir = os.path.join(script_dir, '..', 'language', language, 'Added')
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+        
+        output_file = os.path.join(output_dir, os.path.basename(input_file))
+        save_json(output_file, data)
         print(f"Success for {language}: Added language: {lang_added}, "
               f"Updated terms: {updated_terms_count}, "
               f"Added {settings['Term']}: {term_added}")
+        print(f"File saved to: {output_file}")
     else:
         print(f"No changes needed for {language}. Localization is up to date.")
 
