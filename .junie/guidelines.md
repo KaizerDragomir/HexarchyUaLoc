@@ -4,10 +4,13 @@
 - No manual run. There will be additional scripts to handle parsing.
 
 2. **Structure of the project:**
-- Outdated. Please show me if in some scripts I'll try to use it. Localization_WorkingCopy-resources.assets-3757.dat main and only file with localization data.
-- I2Languages-resources.assets-76790.json correct file with localization data. Focus on this file.
+- Outdated. Localization_WorkingCopy-resources.assets-3757.dat is the source file in CSV format, needed only if the mod is officially accepted.
+- I2Languages-resources.assets-76790.json correct file with localization data (built/JSON format). Focus on this file for modding.
 - Folder Scripts will contain scripts to parse the file and generate localization files.
-- Create a folder for each language using its English name (e.g., 'Ukrainian'). 
+- Create a folder for each language using its English name (e.g., 'Ukrainian').
+- Inside the language folder:
+    - 'Added': Contains the localization file with the new language added.
+    - 'Override': Contains the localization file where the new language overrides English (used to bypass PlayFab limitations).
 - Inside the language folder it must be a folder 'Added' with added language to the file, and a folder called 'Override'. 
 - Don't create any other files.
 
