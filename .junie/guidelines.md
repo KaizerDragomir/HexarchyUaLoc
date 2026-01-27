@@ -7,11 +7,11 @@
 - Outdated. Localization_WorkingCopy-resources.assets-3757.dat is the source file in CSV format, needed only if the mod is officially accepted.
 - I2Languages-resources.assets-76790.json correct file with localization data (built/JSON format). Focus on this file for modding.
 - Folder Scripts will contain scripts to parse the file and generate localization files.
-- Create a folder for each language using its English name (e.g., 'Ukrainian').
-- Inside the language folder:
+- Folder `language` contains subfolders for each language using its English name (e.g., 'Ukrainian').
+- Inside each language folder:
+    - `settings.json`: Configuration file for the language, used by scripts (e.g., `create_filler_json.py`).
     - 'Added': Contains the localization file with the new language added.
     - 'Override': Contains the localization file where the new language overrides English (used to bypass PlayFab limitations).
-- Inside the language folder it must be a folder 'Added' with added language to the file, and a folder called 'Override'. 
 - Don't create any other files.
 
 3. **Python guidelines**:
@@ -27,6 +27,9 @@
 
 5. **Commiting policy**:
 - All commits will be done manually or after user approval. 
+
+6. **Other**:
+- Always ask questions after the prompt if needed.
 
 After testing:
 - Delete all additional files that you created except `.junie/guidelines.md` and asked in prompts.
