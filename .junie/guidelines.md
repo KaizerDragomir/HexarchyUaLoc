@@ -7,6 +7,7 @@
 - Outdated. Localization_WorkingCopy-resources.assets-3757.dat is the source file in CSV format, needed only if the mod is officially accepted.
 - I2Languages-resources.assets-76790.json correct file with localization data (built/JSON format). Focus on this file for modding.
 - Folder Scripts will contain scripts to parse the file and generate localization files.
+- Folder `LocUI` will contain the TKinter GUI application for localization editing.
 - Folder `language` contains subfolders for each language using its English name (e.g., 'Ukrainian').
 - Inside each language folder:
     - `settings.json`: Configuration file for the language, used by scripts (e.g., `create_filler_json.py`).
