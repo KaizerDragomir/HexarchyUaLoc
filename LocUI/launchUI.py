@@ -327,10 +327,10 @@ class LocApp(tk.Tk):
         fields = [
             ("Name", "Ukrainian"),
             ("Code", "uk"),
-            ("Flags", "0"),
+            ("Flags", 0),
             ("Term", "LANG/UKRAINIAN"),
             ("FillerPrefix", "NeedUA "),
-            ("CopyFromIndex", "0"),
+            ("CopyFromIndex", 0),
             ("FontCopyFromLanguage", "English")
         ]
         
@@ -347,6 +347,14 @@ class LocApp(tk.Tk):
             if any(not v for v in settings.values()):
                 messagebox.showerror("Error", "All fields are required.")
                 return
+
+            # enforce integer types for specific fields
+            for key in ("Flags", "CopyFromIndex"):
+                try:
+                    settings[key] = int(settings.get(key, 0))
+                except (ValueError, TypeError):
+                    messagebox.showerror("Error", f"{key} must be an integer.")
+                    return
             
             # Additional logic to create folder and settings.json
             # and run create_filler_json.py
