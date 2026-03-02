@@ -375,8 +375,17 @@ class LocApp(tk.Tk):
                 result = subprocess.run([sys.executable, script_path, lang_name], capture_output=True, text=True)
                 
                 if result.returncode == 0:
-                    messagebox.showinfo("Success", f"Language {lang_name} created. You can now load it.")
+                    messagebox.showinfo("Success", f"Language {lang_name} created. Loading it now...")
                     top.destroy()
+                    
+                    # Automatically load the newly created language file
+                    added_file = os.path.join(lang_dir, 'Added', 'I2Languages-resources.assets-76790.json')
+                    if os.path.exists(added_file):
+                        success, error = self.model.load_json(added_file)
+                        if success:
+                            self._post_load_actions()
+                        else:
+                            messagebox.showerror("Error", f"Failed to load new language: {error}")
                 else:
                     messagebox.showerror("Error", f"Failed to create filler JSON: {result.stderr}")
             except Exception as e:
