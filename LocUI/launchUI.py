@@ -47,7 +47,8 @@ class LocApp(tk.Tk):
         
         self.search_var = tk.StringVar()
         self.search_var.trace_add("write", lambda *args: self.apply_filters())
-        tk.Entry(search_frame, textvariable=self.search_var).pack(fill=tk.X, padx=5, pady=2)
+        self.search_entry = tk.Entry(search_frame, textvariable=self.search_var)
+        self.search_entry.pack(fill=tk.X, padx=5, pady=2)
         
         tk.Button(search_frame, text="Filter by Category...", command=self.open_category_filter).pack(fill=tk.X, padx=5, pady=2)
         
@@ -55,9 +56,26 @@ class LocApp(tk.Tk):
         tk.Checkbutton(search_frame, text="Hide Translated (Ctrl+T)", variable=self.hide_translated_var, 
                        command=self.apply_filters).pack(anchor=tk.W, padx=5)
         
-        self.term_listbox = tk.Listbox(self.sidebar)
-        self.term_listbox.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
-        self.term_listbox.bind("<<ListboxSelect>>", self.on_term_select)
+        self.hide_translated_categories_var = tk.BooleanVar(value=False)
+        tk.Checkbutton(search_frame, text="Hide Translated Categories", variable=self.hide_translated_categories_var,
+                       command=self.apply_filters).pack(anchor=tk.W, padx=5)
+        
+        tree_ctrl_frame = tk.Frame(search_frame)
+        tree_ctrl_frame.pack(fill=tk.X, padx=5, pady=2)
+        tk.Button(tree_ctrl_frame, text="Expand All", command=self.expand_all).pack(side=tk.LEFT, fill=tk.X, expand=True)
+        tk.Button(tree_ctrl_frame, text="Collapse All", command=self.collapse_all).pack(side=tk.LEFT, fill=tk.X, expand=True)
+        
+        tree_frame = tk.Frame(self.sidebar)
+        tree_frame.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+        
+        self.term_tree = ttk.Treeview(tree_frame, show="tree", selectmode="browse")
+        self.term_tree.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        
+        scrollbar = ttk.Scrollbar(tree_frame, orient="vertical", command=self.term_tree.yview)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        
+        self.term_tree.configure(yscrollcommand=scrollbar.set)
+        self.term_tree.bind("<<TreeviewSelect>>", self.on_term_select)
 
     def _setup_editor(self):
         """Initializes the right editor pane with details and reference languages."""
@@ -118,7 +136,7 @@ class LocApp(tk.Tk):
         
         # Edit Menu
         edit_menu = tk.Menu(menubar, tearoff=0)
-        edit_menu.add_command(label="Search Term...", accelerator="Ctrl+F", command=lambda: self.sidebar.focus_set())
+        edit_menu.add_command(label="Search Term...", accelerator="Ctrl+F", command=lambda: self.search_entry.focus_set())
         edit_menu.add_command(label="Filter by Category...", command=self.open_category_filter)
         edit_menu.add_checkbutton(label="Hide Translated Terms", variable=self.hide_translated_var, accelerator="Ctrl+T")
         edit_menu.add_separator()
@@ -140,6 +158,7 @@ class LocApp(tk.Tk):
         self.config(menu=menubar)
 
     def _bind_shortcuts(self):
+        self.bind("<Control-f>", lambda e: self.search_entry.focus_set())
         self.bind("<Control-s>", lambda e: self.save_file())
         self.bind("<Control-t>", lambda e: self.toggle_hide_translated())
 
@@ -277,48 +296,96 @@ class LocApp(tk.Tk):
             self.ref_text_widgets.append((idx, ref_text))
 
     def apply_filters(self):
-        """Filters the term list based on search string and selected categories."""
+        """Filters the term list based on search string and selected categories, organized by category."""
         search_term = self.search_var.get().lower()
         hide_translated = self.hide_translated_var.get()
+        hide_translated_categories = self.hide_translated_categories_var.get()
         
-        self.filtered_indices = []
-        self.term_listbox.delete(0, tk.END)
+        # Clear the tree
+        for item in self.term_tree.get_children():
+            self.term_tree.delete(item)
+            
+        self.filtered_indices = {} # Map Treeview item IDs to model term indices
         
-        # Batch insert for better performance
-        terms_to_add = []
+        # Group terms by category
+        category_map = {}
         for i, term_obj in enumerate(self.model.terms):
             term_name = term_obj.get('Term', '')
             
             # Category filter
-            cat = term_name.split('/')[0] if '/' in term_name else "UNCATEGORIZED"
-            if cat not in self.model.selected_categories:
+            cat_name = term_name.split('/')[0] if '/' in term_name else "UNCATEGORIZED"
+            if cat_name not in self.model.selected_categories:
                 continue
             
             if search_term and search_term not in term_name.lower():
                 continue
                 
-            if hide_translated:
-                if self.model.is_term_translated(i, self.model.target_lang_index):
-                    continue
+            is_translated = self.model.is_term_translated(i, self.model.target_lang_index)
+            if hide_translated and is_translated:
+                continue
             
-            self.filtered_indices.append(i)
-            terms_to_add.append(term_name)
-        
-        if terms_to_add:
-            self.term_listbox.insert(tk.END, *terms_to_add)
+            if cat_name not in category_map:
+                category_map[cat_name] = []
+            category_map[cat_name].append((i, term_name, is_translated))
+
+        # Add to Treeview
+        for cat_name in sorted(category_map.keys()):
+            # Check if all terms in the category (after filtering) are translated
+            # Note: We need to know if the WHOLE category in the model is translated if we want to hide fully translated categories.
+            # But "Hide Translated Categories" usually means "Hide categories that have no untranslated terms left".
+            
+            category_terms = category_map[cat_name]
+            
+            if hide_translated_categories:
+                # If we hide translated categories, we need to check if there are any untranslated terms in THIS category in the model
+                # OR only in the filtered list? Usually it's about the model state.
+                # Let's check if there's ANY untranslated term in the model for this category.
+                has_untranslated = False
+                for i, t_obj in enumerate(self.model.terms):
+                    t_name = t_obj.get('Term', '')
+                    t_cat = t_name.split('/')[0] if '/' in t_name else "UNCATEGORIZED"
+                    if t_cat == cat_name:
+                        if not self.model.is_term_translated(i, self.model.target_lang_index):
+                            has_untranslated = True
+                            break
+                if not has_untranslated:
+                    continue
+
+            cat_id = self.term_tree.insert("", tk.END, text=cat_name, open=True)
+            for i, term_name, _ in category_terms:
+                # Display only the part after the category if it exists
+                display_name = term_name.split('/', 1)[1] if '/' in term_name else term_name
+                item_id = self.term_tree.insert(cat_id, tk.END, text=display_name)
+                self.filtered_indices[item_id] = i
+
+    def expand_all(self):
+        """Expands all categories in the tree."""
+        for item in self.term_tree.get_children():
+            self.term_tree.item(item, open=True)
+
+    def collapse_all(self):
+        """Collapses all categories in the tree."""
+        for item in self.term_tree.get_children():
+            self.term_tree.item(item, open=False)
 
     def on_term_select(self, event):
-        """Handles term selection from the listbox, updating the editor and references."""
+        """Handles term selection from the Treeview, updating the editor and references."""
         # Auto-save current translation if selection changes
         if self.current_selection_index != -1:
             self.save_current_translation()
 
-        selection = self.term_listbox.curselection()
+        selection = self.term_tree.selection()
         if not selection:
             self.current_selection_index = -1
             return
             
-        index = self.filtered_indices[selection[0]]
+        item_id = selection[0]
+        if item_id not in self.filtered_indices:
+            # This is likely a category node
+            self.current_selection_index = -1
+            return
+            
+        index = self.filtered_indices[item_id]
         self.current_selection_index = index
         term_obj = self.model.get_term_data(index)
         
