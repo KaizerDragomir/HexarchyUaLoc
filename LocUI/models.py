@@ -129,7 +129,7 @@ class LocalizationModel:
     def is_term_translated(self, term_index, lang_index):
         """Checks if a term is considered fully translated (not empty and no filler prefix)."""
         translation = self.get_translation(term_index, lang_index)
-        if not translation:
+        if not translation or not translation.strip():
             return False
         
         filler_prefix = self.settings.get('FillerPrefix', "")

@@ -315,6 +315,11 @@ class LocApp(tk.Tk):
             
         new_val = self.translation_text.get("1.0", tk.END).strip()
         self.model.update_translation(self.current_selection_index, self.model.target_lang_index, new_val)
+        
+        # If "Hide Translated" is active, we should update the list
+        if self.hide_translated_var.get():
+            self.apply_filters()
+            
         return "break" # Prevent newline
 
     def cancel_translation_edit(self, event=None):
