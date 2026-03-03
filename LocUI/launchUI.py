@@ -149,23 +149,60 @@ class LocApp(tk.Tk):
             if not messagebox.askyesno("Unsaved Changes", "You have unsaved changes. Load anyway?"):
                 return
         
-        initial_dir = os.path.join(self.project_root, 'language')
-        if not os.path.exists(initial_dir):
-            os.makedirs(initial_dir, exist_ok=True)
+        languages_dir = os.path.join(self.project_root, 'language')
+        if not os.path.exists(languages_dir):
+            os.makedirs(languages_dir, exist_ok=True)
+            messagebox.showinfo("No Languages", "No language directories found.")
+            return
 
-        file_path = filedialog.askopenfilename(
-            initialdir=initial_dir,
-            title="Select Language JSON",
-            filetypes=(("JSON files", "*.json"), ("all files", "*.*"))
-        )
+        available_languages = []
+        for d in os.listdir(languages_dir):
+            full_path = os.path.join(languages_dir, d)
+            if os.path.isdir(full_path):
+                # Check for standard location
+                json_path = os.path.join(full_path, 'Added', 'I2Languages-resources.assets-76790.json')
+                if os.path.exists(json_path):
+                    available_languages.append((d, json_path))
         
-        if file_path:
-            success, error = self.model.load_json(file_path)
-            if success:
-                # Detect language name from folder structure or settings
-                self._post_load_actions()
-            else:
-                messagebox.showerror("Error", f"Failed to load: {error}")
+        if not available_languages:
+            messagebox.showinfo("No Languages", "No language JSON files found in language/*/Added/ folders.")
+            return
+
+        # Selection Dialog
+        dialog = tk.Toplevel(self)
+        dialog.title("Select Language")
+        dialog.geometry("300x400")
+        dialog.transient(self)
+        dialog.grab_set()
+
+        tk.Label(dialog, text="Select existing language:", font=("Arial", 10, "bold")).pack(pady=10)
+        
+        listbox = tk.Listbox(dialog, font=("Arial", 10))
+        listbox.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)
+        
+        for lang, path in available_languages:
+            listbox.insert(tk.END, lang)
+        
+        def on_select():
+            selection = listbox.curselection()
+            if selection:
+                idx = selection[0]
+                lang_name, file_path = available_languages[idx]
+                success, error = self.model.load_json(file_path)
+                if success:
+                    self._post_load_actions()
+                    dialog.destroy()
+                else:
+                    messagebox.showerror("Error", f"Failed to load: {error}")
+        
+        btn_frame = tk.Frame(dialog)
+        btn_frame.pack(fill=tk.X, pady=10)
+        
+        tk.Button(btn_frame, text="Load", command=on_select, width=10).pack(side=tk.LEFT, padx=30)
+        tk.Button(btn_frame, text="Cancel", command=dialog.destroy, width=10).pack(side=tk.RIGHT, padx=30)
+        
+        # Double-click to load
+        listbox.bind("<Double-Button-1>", lambda e: on_select())
 
     def _post_load_actions(self):
         # Determine language name from path
