@@ -229,12 +229,13 @@ class LocApp(tk.Tk):
 
     def _post_load_actions(self):
         # Determine language name from path
+        self.current_language_name = "Unknown"
         parts = self.model.file_path.split(os.sep)
         if 'language' in parts:
             lang_idx = parts.index('language')
             if lang_idx + 1 < len(parts):
-                lang_name = parts[lang_idx + 1]
-                self.model.load_settings(lang_name)
+                self.current_language_name = parts[lang_idx + 1]
+                self.model.load_settings(self.current_language_name)
         
         # Determine target language index
         if self.model.settings.get('Name'):
@@ -248,7 +249,18 @@ class LocApp(tk.Tk):
             
         self.update_ref_langs_ui()
         self.apply_filters()
-        self.title(f"Hexarchy Localization Editor - {os.path.basename(self.model.file_path)}")
+        self.update_title()
+
+    def update_title(self):
+        """Updates the window title with the loaded language and modification status."""
+        title = "Hexarchy Localization Editor"
+        if hasattr(self, 'current_language_name'):
+            title += f" - {self.current_language_name}"
+        
+        if self.model.is_modified:
+            title += " *"
+            
+        self.title(title)
 
     def update_ref_langs_ui(self):
         """Rebuilds the reference language display area based on current selections."""
@@ -338,6 +350,7 @@ class LocApp(tk.Tk):
             
         new_val = self.translation_text.get("1.0", tk.END).strip()
         self.model.update_translation(self.current_selection_index, self.model.target_lang_index, new_val)
+        self.update_title()
         
         # If "Hide Translated" is active, we should update the list
         if self.hide_translated_var.get():
@@ -355,6 +368,7 @@ class LocApp(tk.Tk):
             return
         success, error = self.model.save_json()
         if success:
+            self.update_title()
             messagebox.showinfo("Success", "File saved successfully.")
         else:
             messagebox.showerror("Error", f"Failed to save: {error}")
