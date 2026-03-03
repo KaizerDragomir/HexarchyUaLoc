@@ -95,7 +95,7 @@ class LocalizationModel:
             return False, str(e)
 
     def update_translation(self, term_index, lang_index, new_value):
-        """Updates the translation for a specific term and language."""
+        """Updates the translation for a specific term and language. Returns (True, "") if changed."""
         try:
             if not (0 <= term_index < len(self.terms)):
                 return False, "Term index out of range"
@@ -107,7 +107,8 @@ class LocalizationModel:
                 if lang_array[lang_index] != new_value:
                     lang_array[lang_index] = new_value
                     self.is_modified = True
-                return True, ""
+                    return True, ""
+                return False, "Value is the same"
             return False, "Language index out of range"
         except Exception as e:
             return False, str(e)

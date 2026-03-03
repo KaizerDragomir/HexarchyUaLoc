@@ -60,6 +60,9 @@ class LocApp(tk.Tk):
         tk.Checkbutton(search_frame, text="Hide Translated Categories", variable=self.hide_translated_categories_var,
                        command=self.apply_filters).pack(anchor=tk.W, padx=5)
         
+        self.stats_var = tk.StringVar(value="Progress: 0/0 (0%)")
+        tk.Label(search_frame, textvariable=self.stats_var, font=("Arial", 9, "bold")).pack(anchor=tk.W, padx=5, pady=2)
+        
         tree_ctrl_frame = tk.Frame(search_frame)
         tree_ctrl_frame.pack(fill=tk.X, padx=5, pady=2)
         tk.Button(tree_ctrl_frame, text="Expand All", command=self.expand_all).pack(side=tk.LEFT, fill=tk.X, expand=True)
@@ -70,6 +73,9 @@ class LocApp(tk.Tk):
         
         self.term_tree = ttk.Treeview(tree_frame, show="tree", selectmode="browse")
         self.term_tree.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        
+        # Tags for bolding
+        self.term_tree.tag_configure("bold", font=("Arial", 9, "bold"))
         
         scrollbar = ttk.Scrollbar(tree_frame, orient="vertical", command=self.term_tree.yview)
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
@@ -301,6 +307,16 @@ class LocApp(tk.Tk):
         hide_translated = self.hide_translated_var.get()
         hide_translated_categories = self.hide_translated_categories_var.get()
         
+        # Calculate overall stats
+        total_terms = len(self.model.terms)
+        translated_count = 0
+        for i in range(total_terms):
+            if self.model.is_term_translated(i, self.model.target_lang_index):
+                translated_count += 1
+        
+        percent = (translated_count / total_terms * 100) if total_terms > 0 else 0
+        self.stats_var.set(f"Progress: {translated_count}/{total_terms} ({percent:.1f}%)")
+
         # Clear the tree
         for item in self.term_tree.get_children():
             self.term_tree.delete(item)
@@ -309,18 +325,27 @@ class LocApp(tk.Tk):
         
         # Group terms by category
         category_map = {}
+        category_full_stats = {} # {cat_name: (translated, total)}
+        
         for i, term_obj in enumerate(self.model.terms):
             term_name = term_obj.get('Term', '')
-            
-            # Category filter
             cat_name = term_name.split('/')[0] if '/' in term_name else "UNCATEGORIZED"
+            
+            is_translated = self.model.is_term_translated(i, self.model.target_lang_index)
+            
+            if cat_name not in category_full_stats:
+                category_full_stats[cat_name] = [0, 0]
+            category_full_stats[cat_name][1] += 1
+            if is_translated:
+                category_full_stats[cat_name][0] += 1
+
+            # Category filter
             if cat_name not in self.model.selected_categories:
                 continue
             
             if search_term and search_term not in term_name.lower():
                 continue
                 
-            is_translated = self.model.is_term_translated(i, self.model.target_lang_index)
             if hide_translated and is_translated:
                 continue
             
@@ -335,27 +360,21 @@ class LocApp(tk.Tk):
             # But "Hide Translated Categories" usually means "Hide categories that have no untranslated terms left".
             
             category_terms = category_map[cat_name]
-            
+            translated, total = category_full_stats[cat_name]
+
             if hide_translated_categories:
-                # If we hide translated categories, we need to check if there are any untranslated terms in THIS category in the model
-                # OR only in the filtered list? Usually it's about the model state.
-                # Let's check if there's ANY untranslated term in the model for this category.
-                has_untranslated = False
-                for i, t_obj in enumerate(self.model.terms):
-                    t_name = t_obj.get('Term', '')
-                    t_cat = t_name.split('/')[0] if '/' in t_name else "UNCATEGORIZED"
-                    if t_cat == cat_name:
-                        if not self.model.is_term_translated(i, self.model.target_lang_index):
-                            has_untranslated = True
-                            break
-                if not has_untranslated:
+                # If we hide translated categories, we check the model state (all terms in category)
+                if translated == total:
                     continue
 
-            cat_id = self.term_tree.insert("", tk.END, text=cat_name, open=True)
-            for i, term_name, _ in category_terms:
+            display_cat_name = f"{cat_name} ({translated}/{total})"
+            cat_tags = ("bold",) if translated < total else ()
+            cat_id = self.term_tree.insert("", tk.END, text=display_cat_name, open=True, tags=cat_tags)
+            for i, term_name, is_translated in category_terms:
                 # Display only the part after the category if it exists
                 display_name = term_name.split('/', 1)[1] if '/' in term_name else term_name
-                item_id = self.term_tree.insert(cat_id, tk.END, text=display_name)
+                term_tags = ("bold",) if not is_translated else ()
+                item_id = self.term_tree.insert(cat_id, tk.END, text=display_name, tags=term_tags)
                 self.filtered_indices[item_id] = i
 
     def expand_all(self):
@@ -416,11 +435,10 @@ class LocApp(tk.Tk):
             return "break"
             
         new_val = self.translation_text.get("1.0", tk.END).strip()
-        self.model.update_translation(self.current_selection_index, self.model.target_lang_index, new_val)
-        self.update_title()
+        updated, _ = self.model.update_translation(self.current_selection_index, self.model.target_lang_index, new_val)
         
-        # If "Hide Translated" is active, we should update the list
-        if self.hide_translated_var.get():
+        if updated:
+            self.update_title()
             self.apply_filters()
             
         return "break" # Prevent newline
