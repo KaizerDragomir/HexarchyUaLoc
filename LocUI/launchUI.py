@@ -24,6 +24,9 @@ class LocApp(tk.Tk):
         self.setup_ui()
         self._create_menu()
         self._bind_shortcuts()
+        
+        self.protocol("WM_DELETE_WINDOW", self.on_exit)
+        self._load_last_language()
 
     def setup_ui(self):
         """Initializes the main user interface components."""
@@ -143,6 +146,26 @@ class LocApp(tk.Tk):
     def toggle_hide_translated(self):
         self.hide_translated_var.set(not self.hide_translated_var.get())
         self.apply_filters()
+
+    def _load_last_language(self):
+        """Attempts to load the last used language on startup."""
+        config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'last_session.json')
+        if not os.path.exists(config_path):
+            return
+
+        try:
+            with open(config_path, 'r', encoding='utf-8') as f:
+                config = json.load(f)
+                last_path = config.get('last_file_path')
+                
+            if last_path and os.path.exists(last_path):
+                success, error = self.model.load_json(last_path)
+                if success:
+                    self._post_load_actions()
+                else:
+                    print(f"Failed to auto-load last language: {error}")
+        except Exception as e:
+            print(f"Error reading last_session.json: {e}")
 
     def load_language(self):
         if self.model.is_modified:
@@ -570,6 +593,16 @@ class LocApp(tk.Tk):
         if self.model.is_modified:
             if not messagebox.askyesno("Exit", "Unsaved changes. Exit anyway?"):
                 return
+        
+        # Save last session info
+        if self.model.file_path:
+            config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'last_session.json')
+            try:
+                with open(config_path, 'w', encoding='utf-8') as f:
+                    json.dump({'last_file_path': self.model.file_path}, f, indent=2)
+            except Exception as e:
+                print(f"Failed to save session info: {e}")
+                
         self.destroy()
 
 if __name__ == "__main__":

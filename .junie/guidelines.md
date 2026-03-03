@@ -34,3 +34,4 @@
 
 After testing:
 - Delete all additional files that you created except `.junie/guidelines.md` and asked in prompts.
+- Temporary files (like `last_session.json` or logs) should be ignored by VCS and removed after session.
