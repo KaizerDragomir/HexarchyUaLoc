@@ -6,7 +6,7 @@ import sys
 from models import LocalizationModel
 
 # Add root folder to sys.path to access Scripts
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 class LocApp(tk.Tk):
     def __init__(self):
@@ -174,14 +174,14 @@ class LocApp(tk.Tk):
 
     def _load_last_language(self):
         """Attempts to load the last used language on startup."""
-        config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'last_session.json')
+        config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "last_session.json")
         if not os.path.exists(config_path):
             return
 
         try:
-            with open(config_path, 'r', encoding='utf-8') as f:
+            with open(config_path, "r", encoding="utf-8") as f:
                 config = json.load(f)
-                last_path = config.get('last_file_path')
+                last_path = config.get("last_file_path")
                 
             if last_path and os.path.exists(last_path):
                 success, error = self.model.load_json(last_path)
@@ -197,7 +197,7 @@ class LocApp(tk.Tk):
             if not messagebox.askyesno("Unsaved Changes", "You have unsaved changes. Load anyway?"):
                 return
         
-        languages_dir = os.path.join(self.project_root, 'language')
+        languages_dir = os.path.join(self.project_root, "language")
         if not os.path.exists(languages_dir):
             os.makedirs(languages_dir, exist_ok=True)
             messagebox.showinfo("No Languages", "No language directories found.")
@@ -208,7 +208,7 @@ class LocApp(tk.Tk):
             full_path = os.path.join(languages_dir, d)
             if os.path.isdir(full_path):
                 # Check for standard location
-                json_path = os.path.join(full_path, 'Added', 'I2Languages-resources.assets-76790.json')
+                json_path = os.path.join(full_path, "Added", "I2Languages-resources.assets-76790.json")
                 if os.path.exists(json_path):
                     available_languages.append((d, json_path))
         
@@ -256,16 +256,16 @@ class LocApp(tk.Tk):
         # Determine language name from path
         self.current_language_name = "Unknown"
         parts = self.model.file_path.split(os.sep)
-        if 'language' in parts:
-            lang_idx = parts.index('language')
+        if "language" in parts:
+            lang_idx = parts.index("language")
             if lang_idx + 1 < len(parts):
                 self.current_language_name = parts[lang_idx + 1]
                 self.model.load_settings(self.current_language_name)
         
         # Determine target language index
-        if self.model.settings.get('Name'):
+        if self.model.settings.get("Name"):
             for i, lang in enumerate(self.model.languages):
-                if lang.get('Name') == self.model.settings['Name']:
+                if lang.get("Name") == self.model.settings["Name"]:
                     self.model.target_lang_index = i
                     break
         
@@ -279,7 +279,7 @@ class LocApp(tk.Tk):
     def update_title(self):
         """Updates the window title with the loaded language and modification status."""
         title = "Hexarchy Localization Editor"
-        if hasattr(self, 'current_language_name'):
+        if hasattr(self, "current_language_name"):
             title += f" - {self.current_language_name}"
         
         if self.model.is_modified:
@@ -294,7 +294,7 @@ class LocApp(tk.Tk):
         
         self.ref_text_widgets = []
         for idx in self.model.reference_lang_indices:
-            lang_name = self.model.languages[idx]['Name']
+            lang_name = self.model.languages[idx]["Name"]
             tk.Label(self.ref_inner_frame, text=f"{lang_name}:", font=("Arial", 9, "bold")).pack(anchor=tk.W)
             
             ref_text = tk.Text(self.ref_inner_frame, wrap=tk.WORD, height=4, state=tk.DISABLED, bg="#f0f0f0")
@@ -328,8 +328,8 @@ class LocApp(tk.Tk):
         category_full_stats = {} # {cat_name: (translated, total)}
         
         for i, term_obj in enumerate(self.model.terms):
-            term_name = term_obj.get('Term', '')
-            cat_name = term_name.split('/')[0] if '/' in term_name else "UNCATEGORIZED"
+            term_name = term_obj.get("Term", "")
+            cat_name = term_name.split("/")[0] if "/" in term_name else "UNCATEGORIZED"
             
             is_translated = self.model.is_term_translated(i, self.model.target_lang_index)
             
@@ -389,6 +389,10 @@ class LocApp(tk.Tk):
 
     def on_term_select(self, event):
         """Handles term selection from the Treeview, updating the editor and references."""
+        # Check if language is loaded
+        if self.model.target_lang_index == -1:
+            return
+
         # Auto-save current translation if selection changes
         if self.current_selection_index != -1:
             self.save_current_translation()
@@ -409,10 +413,10 @@ class LocApp(tk.Tk):
         term_obj = self.model.get_term_data(index)
         
         # Update Details
-        self.term_name_label.config(text=term_obj.get('Term', ''))
+        self.term_name_label.config(text=term_obj.get("Term", ""))
         cat = "UNCATEGORIZED"
-        if '/' in term_obj.get('Term', ''):
-            cat = term_obj.get('Term', '').split('/')[0]
+        if "/" in term_obj.get("Term", ""):
+            cat = term_obj.get("Term", "").split("/")[0]
         self.category_label.config(text=cat)
         
         # Update Editor
@@ -464,7 +468,7 @@ class LocApp(tk.Tk):
             return
             
         import subprocess
-        script_path = os.path.join(self.project_root, 'Scripts', 'validator.py')
+        script_path = os.path.join(self.project_root, "Scripts", "validator.py")
         try:
             result = subprocess.run([sys.executable, script_path, self.model.file_path], capture_output=True, text=True)
             output = result.stdout + result.stderr
@@ -487,15 +491,31 @@ class LocApp(tk.Tk):
         top = tk.Toplevel(self)
         top.title("New Language Wizard")
         top.geometry("400x500")
-        
+
+        # Load defaults from config
+        config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "wizard_defaults.json")
+        if os.path.exists(config_path):
+            with open(config_path, "r", encoding="utf-8") as f:
+                defaults = json.load(f)
+        else:
+            defaults = {
+                "Name": "Ukrainian",
+                "Code": "uk",
+                "Flags": 0,
+                "Term": "LANG/UKRAINIAN",
+                "FillerPrefix": "NeedUA ",
+                "CopyFromIndex": 0,
+                "FontCopyFromLanguage": "English"
+            }
+
         fields = [
-            ("Name", "Ukrainian"),
-            ("Code", "uk"),
-            ("Flags", 0),
-            ("Term", "LANG/UKRAINIAN"),
-            ("FillerPrefix", "NeedUA "),
-            ("CopyFromIndex", 0),
-            ("FontCopyFromLanguage", "English")
+            ("Name", defaults.get("Name", "")),
+            ("Code", defaults.get("Code", "")),
+            ("Flags", defaults.get("Flags", 0)),
+            ("Term", defaults.get("Term", "")),
+            ("FillerPrefix", defaults.get("FillerPrefix", "")),
+            ("CopyFromIndex", defaults.get("CopyFromIndex", 0)),
+            ("FontCopyFromLanguage", defaults.get("FontCopyFromLanguage", ""))
         ]
         
         entries = {}
@@ -579,9 +599,9 @@ class LocApp(tk.Tk):
                 self.model.update_translation(i, 0, source_val)
                 count += 1
         
-        # Save to a new folder 'Override'
-        lang_name = self.model.settings.get('Name', 'Unknown')
-        override_dir = os.path.join(self.project_root, 'language', lang_name, 'Override')
+        # Save to a new folder "Override"
+        lang_name = self.model.settings.get("Name", "Unknown")
+        override_dir = os.path.join(self.project_root, "language", lang_name, "Override")
         os.makedirs(override_dir, exist_ok=True)
         
         output_file = os.path.join(override_dir, os.path.basename(self.model.file_path))
@@ -602,7 +622,7 @@ class LocApp(tk.Tk):
         vars = []
         for i, lang in enumerate(self.model.languages):
             var = tk.BooleanVar(value=(i in self.model.reference_lang_indices))
-            cb = tk.Checkbutton(top, text=lang['Name'], variable=var)
+            cb = tk.Checkbutton(top, text=lang["Name"], variable=var)
             cb.pack(anchor=tk.W, padx=10, pady=2)
             vars.append((i, var))
             
@@ -695,10 +715,10 @@ class LocApp(tk.Tk):
         
         # Save last session info
         if self.model.file_path:
-            config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'last_session.json')
+            config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "last_session.json")
             try:
-                with open(config_path, 'w', encoding='utf-8') as f:
-                    json.dump({'last_file_path': self.model.file_path}, f, indent=2)
+                with open(config_path, "w", encoding="utf-8") as f:
+                    json.dump({"last_file_path": self.model.file_path}, f, indent=2)
             except Exception as e:
                 print(f"Failed to save session info: {e}")
                 

@@ -1,0 +1,9 @@
+﻿{
+  "Name": "Ukrainian",
+  "Code": "uk",
+  "Flags": 0,
+  "Term": "LANG/UKRAINIAN",
+  "FillerPrefix": "NeedUA ",
+  "CopyFromIndex": 0,
+  "FontCopyFromLanguage": "English"
+}
