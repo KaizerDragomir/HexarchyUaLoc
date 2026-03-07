@@ -1,4 +1,6 @@
-﻿import tkinter as tk
+﻿import csv
+import io
+import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 import os
 import json
@@ -651,11 +653,14 @@ class LocApp(tk.Tk):
             
         top = tk.Toplevel(self)
         top.title("Filter by Category")
-        top.geometry("400x500")
+        top.geometry("450x600")
         
         # Search bar in filter
         filter_search_var = tk.StringVar()
-        tk.Entry(top, textvariable=filter_search_var).pack(fill=tk.X, padx=5, pady=5)
+        search_frame = tk.Frame(top)
+        search_frame.pack(fill=tk.X, padx=5, pady=5)
+        tk.Label(search_frame, text="Search:").pack(side=tk.LEFT)
+        tk.Entry(search_frame, textvariable=filter_search_var).pack(side=tk.LEFT, fill=tk.X, expand=True)
         
         # Action Buttons at the bottom (packed first with side=BOTTOM)
         btn_frame = tk.Frame(top)
@@ -672,8 +677,121 @@ class LocApp(tk.Tk):
         def select_none():
             for var in vars.values(): var.set(False)
 
+        def export_csv():
+            selected_cats = [cat for cat, var in vars.items() if var.get()]
+            if not selected_cats:
+                messagebox.showwarning("Warning", "No categories selected for export.")
+                return
+            
+            output = io.StringIO()
+            writer = csv.writer(output, quoting=csv.QUOTE_MINIMAL)
+            
+            # Use only Term, Reference Language and Translating Language
+            target_lang_idx = self.model.target_lang_index
+            ref_lang_indices = self.model.reference_lang_indices
+            
+            if target_lang_idx == -1:
+                messagebox.showerror("Error", "No target language loaded.")
+                return
+            
+            header = ["Term"]
+            # We'll export all reference languages currently selected, plus the target language
+            # Or just the first reference language if the user wants "Reference Language" (singular)
+            # Given the request "Reference Language and Translating Language", I'll use the first ref if available.
+            
+            export_indices = []
+            if ref_lang_indices:
+                # Use the first one as primary reference
+                ref_idx = ref_lang_indices[0]
+                header.append(self.model.languages[ref_idx]["Name"])
+                export_indices.append(ref_idx)
+            
+            header.append(self.model.languages[target_lang_idx]["Name"])
+            export_indices.append(target_lang_idx)
+            
+            writer.writerow(header)
+            
+            count = 0
+            for term_obj in self.model.terms:
+                term_name = term_obj.get('Term', '')
+                category = term_name.split('/')[0] if '/' in term_name else "UNCATEGORIZED"
+                if category in selected_cats:
+                    row = [term_name]
+                    langs = term_obj.get('Languages', {}).get('Array', [])
+                    for idx in export_indices:
+                        val = langs[idx] if idx < len(langs) else ""
+                        row.append(val)
+                    writer.writerow(row)
+                    count += 1
+            
+            self.clipboard_clear()
+            self.clipboard_append(output.getvalue())
+            messagebox.showinfo("Export", f"Exported {count} terms to clipboard (Term, Ref, Target).")
+
+        def import_csv():
+            try:
+                data = self.clipboard_get()
+            except tk.TclError:
+                messagebox.showerror("Error", "Clipboard is empty or does not contain text.")
+                return
+            
+            if not data:
+                return
+                
+            input_file = io.StringIO(data)
+            reader = csv.reader(input_file)
+            try:
+                header = next(reader)
+            except StopIteration:
+                messagebox.showerror("Error", "Clipboard content is not valid CSV.")
+                return
+
+            if not header or header[0] != "Term":
+                messagebox.showerror("Error", "Invalid CSV format. First column must be 'Term'.")
+                return
+
+            # Map column indices to language names
+            col_map = {}
+            for i, col_name in enumerate(header[1:], 1):
+                col_map[i] = col_name
+
+            # Find language indices in our model
+            lang_to_idx = {lang["Name"]: i for i, lang in enumerate(self.model.languages)}
+            
+            # Create a lookup for terms in our model
+            term_lookup = {t.get('Term', ''): t for t in self.model.terms}
+            
+            updated_count = 0
+            for row in reader:
+                if not row: continue
+                term_name = row[0]
+                if term_name in term_lookup:
+                    term_obj = term_lookup[term_name]
+                    langs_array = term_obj.get('Languages', {}).get('Array', [])
+                    for col_idx, lang_name in col_map.items():
+                        if col_idx < len(row) and lang_name in lang_to_idx:
+                            lang_idx = lang_to_idx[lang_name]
+                            if lang_idx < len(langs_array):
+                                if langs_array[lang_idx] != row[col_idx]:
+                                    langs_array[lang_idx] = row[col_idx]
+                                    updated_count += 1
+                                    self.model.is_modified = True
+
+            if updated_count > 0:
+                self.apply_filters()
+                if self.current_selection_index != -1:
+                    self.on_term_select(None)
+                messagebox.showinfo("Import", f"Imported data. Updated {updated_count} translations.")
+            else:
+                messagebox.showinfo("Import", "No changes made during import.")
+
         tk.Button(btn_frame, text="Check all", command=select_all).pack(side=tk.LEFT, padx=5, pady=5)
         tk.Button(btn_frame, text="Uncheck all", command=select_none).pack(side=tk.LEFT, padx=5, pady=5)
+        
+        # New Export/Import buttons
+        tk.Button(btn_frame, text="Export CSV", command=export_csv).pack(side=tk.LEFT, padx=5, pady=5)
+        tk.Button(btn_frame, text="Import CSV", command=import_csv).pack(side=tk.LEFT, padx=5, pady=5)
+        
         tk.Button(btn_frame, text="Accept", command=apply).pack(side=tk.RIGHT, padx=5, pady=5)
 
         # Scrollable area for checkboxes
