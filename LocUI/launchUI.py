@@ -22,6 +22,7 @@ class LocApp(tk.Tk):
         self.filtered_indices = []
         self.current_selection_index = -1
         self.ref_text_widgets = []  # Store references to reference text widgets
+        self.category_expansion_state = {} # {cat_name: bool}
         
         self.setup_ui()
         self._create_menu()
@@ -84,6 +85,8 @@ class LocApp(tk.Tk):
         
         self.term_tree.configure(yscrollcommand=scrollbar.set)
         self.term_tree.bind("<<TreeviewSelect>>", self.on_term_select)
+        self.term_tree.bind("<<TreeviewOpen>>", self.on_tree_open)
+        self.term_tree.bind("<<TreeviewClose>>", self.on_tree_close)
 
     def _setup_editor(self):
         """Initializes the right editor pane with details and reference languages."""
@@ -371,7 +374,11 @@ class LocApp(tk.Tk):
 
             display_cat_name = f"{cat_name} ({translated}/{total})"
             cat_tags = ("bold",) if translated < total else ()
-            cat_id = self.term_tree.insert("", tk.END, text=display_cat_name, open=True, tags=cat_tags)
+            
+            # Use tracked state, default to open (True)
+            is_open = self.category_expansion_state.get(cat_name, True)
+            
+            cat_id = self.term_tree.insert("", tk.END, text=display_cat_name, open=is_open, tags=cat_tags, values=(cat_name,))
             for i, term_name, is_translated in category_terms:
                 # Display only the part after the category if it exists
                 display_name = term_name.split('/', 1)[1] if '/' in term_name else term_name
@@ -383,11 +390,33 @@ class LocApp(tk.Tk):
         """Expands all categories in the tree."""
         for item in self.term_tree.get_children():
             self.term_tree.item(item, open=True)
+            # Update state for categories
+            values = self.term_tree.item(item, "values")
+            if values:
+                self.category_expansion_state[values[0]] = True
 
     def collapse_all(self):
         """Collapses all categories in the tree."""
         for item in self.term_tree.get_children():
             self.term_tree.item(item, open=False)
+            # Update state for categories
+            values = self.term_tree.item(item, "values")
+            if values:
+                self.category_expansion_state[values[0]] = False
+
+    def on_tree_open(self, event):
+        """Handles category expansion manually."""
+        item = self.term_tree.focus()
+        values = self.term_tree.item(item, "values")
+        if values:
+            self.category_expansion_state[values[0]] = True
+
+    def on_tree_close(self, event):
+        """Handles category collapse manually."""
+        item = self.term_tree.focus()
+        values = self.term_tree.item(item, "values")
+        if values:
+            self.category_expansion_state[values[0]] = False
 
     def on_term_select(self, event):
         """Handles term selection from the Treeview, updating the editor and references."""
