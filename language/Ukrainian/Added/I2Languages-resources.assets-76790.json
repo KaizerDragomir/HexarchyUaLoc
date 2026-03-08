@@ -31,7 +31,7 @@
               "Cancelar ordens para esta unidade.",
               "取消对此单位的命令。",
               "取消對此單位的命令。",
-              "NeedUA Cancel orders for this unit."
+              "Скасувати накази для цієї одиниці."
             ]
           },
           "Flags": {
@@ -70,7 +70,7 @@
               "Destrua esta unidade.",
               "摧毁此单位。",
               "摧毀此單位。",
-              "NeedUA Destroy this unit."
+              "Розпустити цю одиницю."
             ]
           },
           "Flags": {
@@ -109,7 +109,7 @@
               "Bônus de defesa aumenta cada turno fortificado. Exerce zona de controle em hexágonos vizinhos.",
               "每回合的驻防奖励增加。在相邻的地块上施加控制区域。",
               "每回合的駐防獎勵增加。在相鄰的地塊上施加控制區域。",
-              "NeedUA Defense bonus increases each turn fortified. Exerts zone of control on neighbor hexes."
+              "Отримувати зростаючий бонус до захисту за кожен хід в укріпленні. Поширювати зону контролю на сусідні гекси."
             ]
           },
           "Flags": {
@@ -148,7 +148,7 @@
               "Destrua melhorias, construções e cidades neste hexágono para ganhar ouro e pontos de vitória. Também remove temporariamente o custo de manutenção para algumas unidades neste hexágono.",
               "摧毁该地块上的改良设施、建筑和城市，获得金币和胜利点数。此外，暂时取消此处某些单位的维护费用。",
               "摧毀該地塊上的改良設施、建築和城市，獲得金幣和勝利點數。此外，暫時取消此處某些單位的維護費用。",
-              "NeedUA Destroy improvements, buildings, and cities on this hex to gain Gold and Victory Points. Also temporarily removes maintenance cost for some units on this hex."
+              "Знищити покращення, будівлі та міста на цьому гексі, щоб отримати золото та переможні очки. Також тимчасово прибрати вартість утримання для деяких одиниць на цьому гексі."
             ]
           },
           "Flags": {
@@ -187,7 +187,7 @@
               "Colete recursos de um hexágono do seu território.",
               "从领土内一个地块上获取资源。",
               "從領土內一個地塊上獲取資源。",
-              "NeedUA Gather resources from a hex in your territory."
+              "Зібрати ресурси з гекса на вашій території."
             ]
           },
           "Flags": {
@@ -226,7 +226,7 @@
               "Colete alimento, ouro e recursos especiais neste hexágono.",
               "从此处收集食物、金币和特殊资源。",
               "從此處收集食物、金幣和特殊資源。",
-              "NeedUA Gather food, gold, and special resources from this hex."
+              "Зібрати їжу, золото та особливі ресурси з цього гекса."
             ]
           },
           "Flags": {
@@ -265,7 +265,7 @@
               "Ataque",
               "攻击",
               "攻擊",
-              "NeedUA Attack"
+              "Атака"
             ]
           },
           "Flags": {
@@ -304,7 +304,7 @@
               "Construir",
               "建造",
               "建造",
-              "NeedUA Build"
+              "Будівництво"
             ]
           },
           "Flags": {
@@ -343,7 +343,7 @@
               "Construir cidade",
               "建造城市",
               "建造城市",
-              "NeedUA Build City"
+              "Заснування міста"
             ]
           },
           "Flags": {
@@ -382,7 +382,7 @@
               "Cancelar",
               "取消",
               "取消",
-              "NeedUA Cancel"
+              "Скасування"
             ]
           },
           "Flags": {
@@ -421,7 +421,7 @@
               "Tomar território",
               "占领",
               "佔領",
-              "NeedUA Claim Territory"
+              "Закріплення території"
             ]
           },
           "Flags": {
@@ -460,7 +460,7 @@
               "Debandar",
               "解散",
               "解散",
-              "NeedUA Disband"
+              "Розформування"
             ]
           },
           "Flags": {
@@ -499,7 +499,7 @@
               "Fortificar",
               "驻防",
               "駐防",
-              "NeedUA Fortify"
+              "Укріплення"
             ]
           },
           "Flags": {
@@ -538,7 +538,7 @@
               "Olhar",
               "看",
               "看",
-              "NeedUA Look At"
+              "Огляд"
             ]
           },
           "Flags": {
@@ -577,7 +577,7 @@
               "Mover",
               "移动",
               "移動",
-              "NeedUA Move"
+              "Переміщення"
             ]
           },
           "Flags": {
@@ -616,7 +616,7 @@
               "Pilhagem",
               "掠夺",
               "掠奪",
-              "NeedUA Pillage"
+              "Грабунок"
             ]
           },
           "Flags": {
@@ -655,7 +655,7 @@
               "Reunir recursos",
               "收集资源",
               "收集資源",
-              "NeedUA Gather Resources"
+              "Збір ресурсів"
             ]
           },
           "Flags": {
@@ -694,7 +694,7 @@
               "Ataque a distância",
               "远程攻击",
               "遠程攻擊",
-              "NeedUA Ranged Attack"
+              "Дистанційна атака"
             ]
           },
           "Flags": {
@@ -733,7 +733,7 @@
               "Gerar novamente",
               "恢复",
               "恢復",
-              "NeedUA Regenerate"
+              "Регенерація"
             ]
           },
           "Flags": {
@@ -772,7 +772,7 @@
               "Dormir",
               "休眠",
               "休眠",
-              "NeedUA Sleep"
+              "Очікування"
             ]
           },
           "Flags": {
@@ -811,7 +811,7 @@
               "Reunir recursos",
               "收集资源",
               "收集資源",
-              "NeedUA Gather Resources"
+              "Збір ресурсів"
             ]
           },
           "Flags": {
@@ -69373,7 +69373,7 @@
               "Embarcar",
               "登舰",
               "登艦",
-              "NeedUA Embark"
+              "Посадка на борт"
             ]
           },
           "Flags": {
@@ -69412,7 +69412,7 @@
               "Desembarcar",
               "解除登舰",
               "解除登艦",
-              "NeedUA Disembark"
+              "Висадка"
             ]
           },
           "Flags": {
