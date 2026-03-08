@@ -68164,7 +68164,7 @@
               "Controles de jogo",
               "游戏控制",
               "遊戲控制",
-              "NeedUA Game Controls"
+              "Керування в грі"
             ]
           },
           "Flags": {
@@ -68203,7 +68203,7 @@
               "Controles de menu",
               "菜单控制",
               "菜單控制",
-              "NeedUA Menu Controls"
+              "Керування в меню"
             ]
           },
           "Flags": {
@@ -68242,7 +68242,7 @@
               "Selecionar",
               "选择",
               "選擇",
-              "NeedUA Select"
+              "Вибрати"
             ]
           },
           "Flags": {
@@ -68281,7 +68281,7 @@
               "Martelo a Ouro",
               "锤子转化为黄金",
               "錘子轉化為黃金",
-              "NeedUA Hammer to Gold"
+              "Перетворити молоти на золото"
             ]
           },
           "Flags": {
@@ -68320,7 +68320,7 @@
               "Encerrar turno",
               "结束回合",
               "結束回合",
-              "NeedUA End Turn"
+              "Завершити хід"
             ]
           },
           "Flags": {
@@ -68359,7 +68359,7 @@
               "Sortear carta",
               "抽取卡牌",
               "抽取卡牌",
-              "NeedUA Draw Card"
+              "Взяти карту"
             ]
           },
           "Flags": {
@@ -68398,7 +68398,7 @@
               "Guardar carta",
               "存储卡牌",
               "存儲卡牌",
-              "NeedUA Save Card"
+              "Відкласти карту"
             ]
           },
           "Flags": {
@@ -68437,7 +68437,7 @@
               "Queimar carta",
               "烧掉卡牌",
               "燒掉卡牌",
-              "NeedUA Burn Card"
+              "Спалити карту"
             ]
           },
           "Flags": {
@@ -68476,7 +68476,7 @@
               "Próxima unidade",
               "下个单位",
               "下個單位",
-              "NeedUA Next Unit"
+              "Наступна одиниця"
             ]
           },
           "Flags": {
@@ -68515,7 +68515,7 @@
               "Mover unidade",
               "移动单位",
               "移動單位",
-              "NeedUA Move Unit"
+              "Перемістити одиницю"
             ]
           },
           "Flags": {
@@ -68554,7 +68554,7 @@
               "Alterar interface / foco do mapa",
               "改变UI/地图聚焦",
               "改變UI/地圖聚焦",
-              "NeedUA Change UI / Map Focus"
+              "Перемкнути фокус UI / мапи"
             ]
           },
           "Flags": {
@@ -68593,7 +68593,7 @@
               "Ativar ou desativar exibir recursos",
               "切换显示资源",
               "切換顯示資源",
-              "NeedUA Toggle Show Resources"
+              "Показати / приховати ресурси"
             ]
           },
           "Flags": {
@@ -68632,7 +68632,7 @@
               "Ver árvore de tecnologia",
               "检视科技树",
               "檢視科技樹",
-              "NeedUA View Tech Tree"
+              "Відкрити дерево технологій"
             ]
           },
           "Flags": {
@@ -68671,7 +68671,7 @@
               "Mover cursor",
               "移动光标",
               "移動游標",
-              "NeedUA Move Cursor"
+              "Перемістити курсор"
             ]
           },
           "Flags": {
@@ -68710,7 +68710,7 @@
               "Mover câmera",
               "平移镜头",
               "平移鏡頭",
-              "NeedUA Pan Camera"
+              "Переміщення камери"
             ]
           },
           "Flags": {
@@ -68749,7 +68749,7 @@
               "Ampliar",
               "镜头拉近",
               "鏡頭拉近",
-              "NeedUA Zoom In"
+              "Наблизити"
             ]
           },
           "Flags": {
@@ -68788,7 +68788,7 @@
               "Reduzir",
               "镜头拉远",
               "鏡頭拉遠",
-              "NeedUA Zoom Out"
+              "Віддалити"
             ]
           },
           "Flags": {
@@ -68827,7 +68827,7 @@
               "Ver definições de controle",
               "检视控制器绑定",
               "檢視控制器綁定",
-              "NeedUA View Controller Bindings"
+              "Переглянути призначення кнопок"
             ]
           },
           "Flags": {
@@ -68866,7 +68866,7 @@
               "Voltar",
               "返回",
               "返回",
-              "NeedUA Back"
+              "Назад"
             ]
           },
           "Flags": {
@@ -68905,7 +68905,7 @@
               "Selecionar",
               "选择",
               "選擇",
-              "NeedUA Select"
+              "Вибрати"
             ]
           },
           "Flags": {
