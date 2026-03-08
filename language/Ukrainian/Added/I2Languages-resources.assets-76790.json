@@ -26083,7 +26083,7 @@
               "Arábia",
               "阿拉伯",
               "阿拉伯",
-              "NeedUA Arabia"
+              "Аравія"
             ]
           },
           "Flags": {
@@ -26122,7 +26122,7 @@
               "Astecas",
               "阿兹特克",
               "阿茲特克",
-              "NeedUA Aztecs"
+              "Ацтеки"
             ]
           },
           "Flags": {
@@ -26161,7 +26161,7 @@
               "China",
               "中国",
               "中國",
-              "NeedUA China"
+              "Китай"
             ]
           },
           "Flags": {
@@ -26200,7 +26200,7 @@
               "Egito",
               "埃及",
               "埃及",
-              "NeedUA Egypt"
+              "Єгипет"
             ]
           },
           "Flags": {
@@ -26239,7 +26239,7 @@
               "Inglaterra",
               "英格兰",
               "英格蘭",
-              "NeedUA England"
+              "Англія"
             ]
           },
           "Flags": {
@@ -26278,7 +26278,7 @@
               "França",
               "法国",
               "法國",
-              "NeedUA France"
+              "Франція"
             ]
           },
           "Flags": {
@@ -26317,7 +26317,7 @@
               "Grécia",
               "希腊",
               "希臘",
-              "NeedUA Greece"
+              "Греція"
             ]
           },
           "Flags": {
@@ -26356,7 +26356,7 @@
               "Pérsia",
               "波斯",
               "波斯",
-              "NeedUA Persia"
+              "Персія"
             ]
           },
           "Flags": {
@@ -26395,7 +26395,7 @@
               "Roma",
               "罗马",
               "羅馬",
-              "NeedUA Rome"
+              "Рим"
             ]
           },
           "Flags": {
@@ -26434,7 +26434,7 @@
               "Rússia",
               "俄罗斯",
               "俄羅斯",
-              "NeedUA Russia"
+              "Росія"
             ]
           },
           "Flags": {
@@ -26473,7 +26473,7 @@
               "• +1 de <sprite=\"gold\" index=0>  por todos os recursos vendidos\n• Lugares sagrados dão +2 de <sprite=\"gold\" index=0>  e +2 de <sprite=\"culture\" index=0>",
               "• 出售的每个资源+1<sprite=\"gold\" index=0>\n• 圣地+2<sprite=\"gold\" index=0>，+2<sprite=\"culture\" index=0>",
               "• 出售的每個資源+1<sprite=\"gold\" index=0>\n• 聖地+2<sprite=\"gold\" index=0>，+2<sprite=\"culture\" index=0>",
-              "NeedUA • +1<sprite=\"gold\" index=0>  for all resources sold\n• Holy Sites give +2<sprite=\"gold\" index=0>  and +2<sprite=\"culture\" index=0>"
+              "• +1<sprite=\"gold\" index=0> за кожен проданий ресурс\n• Святі місця дають +2<sprite=\"gold\" index=0>  і +2<sprite=\"culture\" index=0>"
             ]
           },
           "Flags": {
@@ -26512,7 +26512,7 @@
               "• Receba 3 de <sprite=\"gold\" index=0> e 2 de <sprite=\"culture\" index=0>  ao matar uma unidade inimiga\n• Receba +1 ponto de vitória<sprite=\"victorypoints\" index=0>  ao matar uma unidade inimiga",
               "• 消灭一个敌方单位可以获得3<sprite=\"gold\" index=0>，2<sprite=\"culture\" index=0>，1胜利点数<sprite=\"victorypoints\" index=0>",
               "• 消滅一個敵方單位可以獲得3<sprite=\"gold\" index=0>，2<sprite=\"culture\" index=0>，1勝利點數<sprite=\"victorypoints\" index=0>",
-              "NeedUA • Get 3<sprite=\"gold\" index=0> and 2<sprite=\"culture\" index=0>  when killing an enemy unit\n• Get +1 Victory Point<sprite=\"victorypoints\" index=0>  when killing an enemy unit"
+              "• За знищення ворожого юніта: +3<sprite=\"gold\" index=0>, +2<sprite=\"culture\" index=0>, +1 Переможне очко<sprite=\"victorypoints\" index=0>"
             ]
           },
           "Flags": {
@@ -26551,7 +26551,7 @@
               "• +1<sprite=\"hammer\" index=0>  da mina, oficina, forja, serraria, e armazém",
               "• 矿场、工坊、锻造厂、锯木厂和仓库+1<sprite=\"hammer\" index=0>",
               "• 礦場、工坊、鍛造廠、鋸木廠和倉庫+1<sprite=\"hammer\" index=0>",
-              "NeedUA • +1<sprite=\"hammer\" index=0>  from mine, workshop, forge, lumber mill, and warehouse"
+              "• +1<sprite=\"hammer\" index=0>  у шахті, майстерні, кузні, лісопилці та складі"
             ]
           },
           "Flags": {
@@ -26590,7 +26590,7 @@
               "• Custo de ouro das maravilhas reduzido em 100%",
               "• 奇观建造不再需要金币",
               "• 奇觀建造不再需要金幣",
-              "NeedUA • Wonder gold cost reduced by 100%"
+              "• Вартість чудес у <sprite=\"\"gold\"\" index=0> зменшено на 100%"
             ]
           },
           "Flags": {
@@ -26629,7 +26629,7 @@
               "• 33% de chance de ganhar 1 de <sprite=\"hammer\" index=0> ao vender um recurso\n• +1 de produção de <sprite=\"gold\" index=0> de hexágonos de água\n• As fronteiras se expandem mais rápido sobre hexágonos de água",
               "• 出售资源时有33%几率获得1<sprite=\"hammer\" index=0>\n• 水域地块+1<sprite=\"gold\" index=0>\n• 边境扩张时获取水域格子所需文化更低",
               "• 出售資源時有33%幾率獲得1<sprite=\"hammer\" index=0>\n• 水域地塊+1<sprite=\"gold\" index=0>\n• 邊境擴張時獲取水域格子所需文化更低",
-              "NeedUA • 33% chance to gain 1<sprite=\"hammer\" index=0>  when selling a resource\n• +1<sprite=\"gold\" index=0>  yield from water hexes\n• Borders expand more quickly over water hexes"
+              "• 33% шанс отримати 1<sprite=\"hammer\" index=0> при продажу ресурсу\n• +1<sprite=\"gold\" index=0> з водних гексів\n• Кордони швидше розширюються через водні гекси"
             ]
           },
           "Flags": {
@@ -26668,7 +26668,7 @@
               "• +2 de <sprite=\"culture\" index=0> por cidade\n• Mais fácil para o crescimento de fronteiras roubar um hexágono inimigo\n• +50% de dano de unidades de artilharia",
               "• 每座城市+2<sprite=\"culture\" index=0>\n• 边界扩张时获得敌人领土所需文化更低\n• 炮兵单位的伤害提高50%",
               "• 每座城市+2<sprite=\"culture\" index=0>\n• 邊界擴張時獲得敵人領土所需文化更低\n• 炮兵單位的傷害提高50%",
-              "NeedUA • +2<sprite=\"culture\" index=0>  per city\n• Easier for border growth to steal an enemy hex\n• +50% damage from artillery units"
+              "• +2<sprite=\"culture\" index=0> за кожне місто\n• Спрощує розширення кордонів і полегшує захоплення гексів суперника\n• +50% шкоди від артилерійських юнітів"
             ]
           },
           "Flags": {
@@ -26707,7 +26707,7 @@
               "• Pode adotar várias cívicas do mesmo tipo\n• Adotar uma cívica concede 4 de <sprite=\"gold\" index=0>",
               "• 同一类型的政策可共存\n• 打出政策卡时获得4<sprite=\"gold\" index=0>",
               "• 同一類型的政策可共存\n• 打出政策卡時獲得4<sprite=\"gold\" index=0>",
-              "NeedUA • Can adopt multiple civics of the same type\n• Adopting a civic gives 4<sprite=\"gold\" index=0>"
+              "• Можете приймати кілька принципів одного типу\n• Прийняття принципу дає 4<sprite=\"gold\" index=0>"
             ]
           },
           "Flags": {
@@ -26746,7 +26746,7 @@
               "• 50% de redução do custo de <sprite=\"gold\" index=0>  do abastecimento da unidade\n• 50% de redução do custo de <sprite=\"gold\" index=0>  de manutenção da cidade",
               "• 单位维护成本<sprite=\"gold\" index=0> -50%\n• 城市维护成本<sprite=\"gold\" index=0> -50%",
               "• 單位維護成本<sprite=\"gold\" index=0> -50%\n• 城市維護成本<sprite=\"gold\" index=0> -50%",
-              "NeedUA • 50% reduced unit supply <sprite=\"gold\" index=0>  cost\n• 50% reduced city upkeep <sprite=\"gold\" index=0>  cost"
+              "• Вартість забезпечення юнітів <sprite=\"gold\" index=0> зменшено на 50%\n• Вартість утримання міст <sprite=\"gold\" index=0>  зменшено на 50%"
             ]
           },
           "Flags": {
@@ -26785,7 +26785,7 @@
               "• +1 extra de construção por turno por cidade\n• +1<sprite=\"hammer\" index=0> de produção em hexágonos com uma estrada",
               "• 每座城市+1每回合建造数\n• 有道路的地块+1<sprite=\"hammer\" index=0>",
               "• 每座城市+1每回合建造數\n• 有道路的地塊+1<sprite=\"hammer\" index=0>",
-              "NeedUA • +1 extra build per turn per city\n• +1<sprite=\"hammer\" index=0>  yield on hexes with a road"
+              "• +1 додаткова дія будівництва за хід у кожному місті\n• +1<sprite=\"hammer\" index=0> на гексах із дорогою"
             ]
           },
           "Flags": {
@@ -26824,7 +26824,7 @@
               "• +<sprite=\"food\" index=0> em todos os hexágonos da cidade\n• 50% de redução de penalidades de produção de felicidade",
               "• 每座城市+<sprite=\"food\" index=0>\n• 缺乏幸福度导致的收益惩罚减半",
               "• 每座城市+<sprite=\"food\" index=0>\n• 缺乏幸福度導致的收益懲罰減半",
-              "NeedUA • +<sprite=\"food\" index=0>  on all city hexes\n• 50% reduced unhappiness yield penalties"
+              "• +<sprite=\"food\" index=0> на всіх міських гексах\n• Штрафи до виробництва від невдоволення зменшено на 50%"
             ]
           },
           "Flags": {
@@ -69919,7 +69919,7 @@
               "Vikings",
               "维京人",
               "維京人",
-              "NeedUA Vikings"
+              "Вікінги"
             ]
           },
           "Flags": {
@@ -69958,7 +69958,7 @@
               "• Quando você Embarcar uma unidade, sorteie uma carta que gera <b>Atacar</b> uma vez por turno\n • Receba Recursos de Luxo<sprite=\"luxury\" index=0> e Pontos de vitória extras<sprite=\"victorypoints\" index=0> ao pilhar",
               "• 当你让一个单位登舰时，每回合可以抽一张赋予<b>冲锋</b>的卡牌。\n• 掠夺时，获得奢饰品资源<sprite=\"luxury\" index=0>以及额外的胜利点数  <sprite=\"victorypoints\" index=0>",
               "• 當你讓一個單位登艦時，每回合可以抽一張賦予<b>衝鋒</b>的卡牌。\n• 掠奪時，獲得奢飾品資源<sprite=\"luxury\" index=0>以及額外的勝利點數<sprite=\"victorypoints\" index=0>",
-              "NeedUA • When you Embark a unit, draw a card that grants <b>Charge</b> once per turn\n• Get Luxury Resources<sprite=\"luxury\" index=0>  and extra Victory Points<sprite=\"victorypoints\" index=0>  when pillaging"
+              "• При посадці юніта на корабель: витягніть карту <b>\"Натиск\"</b> раз на хід\n• Отримуйте ресурси розкоші<sprite=\"luxury\" index=0> і додаткові Переможні очки<sprite=\"victorypoints\" index=0> під час грабунку"
             ]
           },
           "Flags": {
@@ -72415,7 +72415,7 @@
               "Prússia",
               "普鲁士",
               "普魯士",
-              "NeedUA Prussia"
+              "Пруссія"
             ]
           },
           "Flags": {
@@ -72454,7 +72454,7 @@
               "• Todas as unidades têm um espaço de promoção extra\n • Quando você promove uma unidade, sorteie uma carta que gera <b>Atacar</b> uma vez por turno\n • Construções de cidade dão +2<sprite=\"gold\" index=0>",
               "•所有单位额外获得一个晋升槽\n •晋升单位时，会抽取一张卡牌，每回合可触发一次<b>冲锋</b>技能\n •城市建筑提供额外+2<sprite=\"gold\" index=0>加成",
               "• 所有單位擁有一個額外的升級欄\n • 當你晉升單位時，每回合一次，抽取一張賦予<b>衝鋒</b>的卡牌\n • 城市建築提供 +2<sprite=\"gold\" index=0>",
-              "NeedUA • All units have an extra promotion slot\n• When you promote a unit, draw a card that grants <b>Charge</b> once per turn\n• City buildings give +2<sprite=\"gold\" index=0>"
+              "• Усі юніти мають додатковий слот підвищення\n• Коли підвищуєте юніт, витягніть карту <b>\"Натиск\"</b> раз на хід\n• Міські будівлі дають +2<sprite=\"gold\" index=0>"
             ]
           },
           "Flags": {
@@ -73000,7 +73000,7 @@
               "Japão",
               "日本",
               "日本",
-              "NeedUA Japan"
+              "Японія"
             ]
           },
           "Flags": {
@@ -73039,7 +73039,7 @@
               "• Aumenta o espaço de armazenamento de recursos em 4\n • Custos operacionais de negociação de <sprite=\"gold\" index=0>  aumentados e <sprite=\"gold\" index=0>  reduzido para venda de recursos\n • +2<sprite=\"hammer\" index=0> em cada cidade a até 5 hexágonos de distância da capital\n • +1<sprite=\"hammer\" index=0> de cabanas de pesca",
               "•资源存储容量提升4格\n •贸易成本提高<sprite=\"gold\" index=0>，资源出售费用降低<sprite=\"gold\" index=0>\n •距离首都5格范围内所有城市获得+2<sprite=\"hammer\" index=0>加成\n •渔村额外产出+1<sprite=\"hammer\" index=0>",
               "• 增加 4\n  資源儲存空間• 增加貿易<sprite=\"gold\" index=0>成本並減少出售資源獲得的<sprite=\"gold\" index=0>\n • 首都 5 格範圍內的每座城市 +2<sprite=\"hammer\" index=0>\n • 漁屋 +1<sprite=\"hammer\" index=0>",
-              "NeedUA • Increase resource storage space by 4\n• Increased trade <sprite=\"gold\" index=0>  overhead and reduced <sprite=\"gold\" index=0>  from selling resources\n• +2<sprite=\"hammer\" index=0> in every city within 5 hexes of capital\n• +1<sprite=\"hammer\" index=0> from Fishing Huts"
+              "• Місткість складу ресурсів збільшено на 4\n• Збільшені торгові витрати <sprite=\"gold\" index=0> і зменшено <sprite=\"gold\" index=0> від продажу ресурсів\n• +2<sprite=\"hammer\" index=0> у містах у межах 5 гексів від столиці\n• +1<sprite=\"hammer\" index=0> від рибальських хатин"
             ]
           },
           "Flags": {
