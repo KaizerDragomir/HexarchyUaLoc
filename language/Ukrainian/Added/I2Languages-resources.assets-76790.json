@@ -33064,7 +33064,7 @@
               "defesa",
               "防御",
               "防禦",
-              "NeedUA defense"
+              "захист"
             ]
           },
           "Flags": {
@@ -33103,7 +33103,7 @@
               "Deserto",
               "沙漠",
               "沙漠",
-              "NeedUA Desert"
+              "Пустеля"
             ]
           },
           "Flags": {
@@ -33142,7 +33142,7 @@
               "Floresta",
               "森林",
               "森林",
-              "NeedUA Forest"
+              "Ліс"
             ]
           },
           "Flags": {
@@ -33181,7 +33181,7 @@
               "Prado",
               "草地",
               "草地",
-              "NeedUA Grasslands"
+              "Луки"
             ]
           },
           "Flags": {
@@ -33220,7 +33220,7 @@
               "Colinas",
               "丘陵",
               "丘陵",
-              "NeedUA Hills"
+              "Пагорби"
             ]
           },
           "Flags": {
@@ -33259,7 +33259,7 @@
               "Colinas / Deserto",
               "丘陵 / 沙漠",
               "丘陵 / 沙漠",
-              "NeedUA Hills / Desert"
+              "Пагорби / Пустеля"
             ]
           },
           "Flags": {
@@ -33298,7 +33298,7 @@
               "Colinas / Floresta",
               "丘陵 / 森林",
               "丘陵 / 森林",
-              "NeedUA Hills / Forest"
+              "Пагорби / Ліс"
             ]
           },
           "Flags": {
@@ -33337,7 +33337,7 @@
               "Colinas / Tundra",
               "丘陵 / 苔原",
               "丘陵 / 苔原",
-              "NeedUA Hills / Tundra"
+              "Пагорби / Тундра"
             ]
           },
           "Flags": {
@@ -33376,7 +33376,7 @@
               "Intransponível",
               "无法通行区域",
               "無法通行區域",
-              "NeedUA Impassable"
+              "Непрохідні"
             ]
           },
           "Flags": {
@@ -33415,7 +33415,7 @@
               "Montanhas",
               "山脉",
               "山脈",
-              "NeedUA Mountains"
+              "Гори"
             ]
           },
           "Flags": {
@@ -33454,7 +33454,7 @@
               "Planícies",
               "平原",
               "平原",
-              "NeedUA Plains"
+              "Степ"
             ]
           },
           "Flags": {
@@ -33493,7 +33493,7 @@
               "Tundra",
               "苔原",
               "苔原",
-              "NeedUA Tundra"
+              "Тундра"
             ]
           },
           "Flags": {
@@ -33532,7 +33532,7 @@
               "Água",
               "水域",
               "水域",
-              "NeedUA Water"
+              "Вода"
             ]
           },
           "Flags": {
@@ -33571,7 +33571,7 @@
               "com",
               "和",
               "和",
-              "NeedUA with"
+              "з"
             ]
           },
           "Flags": {
@@ -33610,7 +33610,7 @@
               "Produz",
               "产出",
               "產出",
-              "NeedUA Yields"
+              "Виробіток"
             ]
           },
           "Flags": {
@@ -34117,7 +34117,7 @@
               "Não se esqueça de conferir os recursos disponíveis para compra fora mercado.",
               "记得查看市场上那些可以购买的资源。",
               "記得查看市場上那些可以購買的資源。",
-              "NeedUA Don’t forget to check what resources are available to buy off the market."
+              "Варто перевіряти які ресурси доступні для купівлі на ринку."
             ]
           },
           "Flags": {
@@ -34156,7 +34156,7 @@
               "Destruir cartas é essencial para otimizar o seu baralho e obter recursos extras para o seu turno.",
               "删除卡牌是优化牌组和在回合内获取更多资源的关键。",
               "刪除卡牌是優化牌組和在回合內獲取更多資源的關鍵。",
-              "NeedUA Destroying cards is key to optimizing your deck and getting extra resources for your turn."
+              "Знищення карт допомагає оптимізувати колоду та отримати додаткові ресурси під час свого ходу."
             ]
           },
           "Flags": {
@@ -34195,7 +34195,7 @@
               "Às vezes, fortificar uma posição-chave é melhor do que ter um exército grande.",
               "有时在关键位置设防比组建大军更为重要。",
               "有時在關鍵位置設防比組建大軍更為重要。",
-              "NeedUA Sometimes fortifying a key position is better than raising a large army."
+              "Інколи ефективніше укріпити ключову позицію аніж збільшувати військо."
             ]
           },
           "Flags": {
@@ -34234,7 +34234,7 @@
               "Um novo cidadão pode ser movido sem custo para trabalhar em um hexágono diferente no turno de crescimento da cidade.",
               "一位新公民可以在城市发展回合免费移动到另一个地块工作。",
               "一位新公民可以在城市發展回合免費移動到另一個地塊工作。",
-              "NeedUA A new citizen can be moved to work a different hex for free on the turn a city grows."
+              "У хід коли місто зросло мешканцям можна безкоштовно змінити робочі гекси."
             ]
           },
           "Flags": {
@@ -34273,7 +34273,7 @@
               "Se você se expandir para terras distantes ou enviar exércitos grandes em campanhas distantes, confirme que você tem ouro suficiente.",
               "如果你要进行大面积扩张或派遣大军远征，请确保拥有足够的金币。",
               "如果你要進行大面積擴張或派遣大軍遠征，請確保擁有足夠的金幣。",
-              "NeedUA If you expand to faraway lands or send large armies on distant campaigns, make sure you have enough gold."
+              "Перед тим, як здійснювати експансію на далекі землі, чи відправляти великі війська за тридев'ять земель, варто переконатись що у скарбниці достатньо золота."
             ]
           },
           "Flags": {
@@ -34312,7 +34312,7 @@
               "Obrigado por jogar!",
               "感谢游玩！",
               "感謝遊玩！",
-              "NeedUA Thanks for playing!"
+              "Дякуємо за гру!"
             ]
           },
           "Flags": {
@@ -34351,7 +34351,7 @@
               "Nunca se envolva em uma guerra em terra na Ásia",
               "永远不要卷入亚洲大陆上的战争",
               "永遠不要捲入亞洲大陸上的戰爭",
-              "NeedUA Never get involved in a land war in Asia"
+              "Не варто вплутуватись у сухопутну війну в Азії"
             ]
           },
           "Flags": {
@@ -34390,7 +34390,7 @@
               "_",
               "_",
               "_",
-              "NeedUA _"
+              "_"
             ]
           },
           "Flags": {
@@ -34429,7 +34429,7 @@
               "Estradas são importantes. Elas reduzem o custo de manutenção, de negociação e aumentam o crescimento de fronteiras. Também são ótimas rotas de invasão para os seus inimigos.",
               "道路很重要。它可以降低维护成本、贸易成本，还可以提高边境扩张速度。但是它也会为敌人提供入侵路径。",
               "道路很重要。它可以降低維護成本、貿易成本，還可以提高邊境擴張速度。但是它也會為敵人提供入侵路徑。",
-              "NeedUA Roads are important. They reduce maintenance cost, trade cost, and increase border growth. They’re also great invasion routes for your enemies."
+              "Дороги важливі. Вони зменшують витрати на утримання військ, витрати на торгівлю та прискорюють розширення кордонів. Однак вони також є зручними шляхами для ворожого вторгнення."
             ]
           },
           "Flags": {
@@ -34468,7 +34468,7 @@
               "Batedores podem coletar recursos como rocha, ferro e mármore de fora do território.",
               "侦察兵可以从你的领土之外获取石头、铁和大理石等资源。",
               "偵察兵可以從你的領土之外獲取石頭、鐵和大理石等資源。",
-              "NeedUA Scouts can gather resources like stone, iron, and marble from outside your territory."
+              "Розвідники можуть збирати ресурси, як-от камінь, залізо та мармур, за межами вашої території."
             ]
           },
           "Flags": {
@@ -34496,7 +34496,7 @@
           "TermType": 0,
           "Languages": {
             "Array": [
-              "Be mindful of the supply route from an army to its nearest city. ",
+              "Be mindful of the supply route from an army to its nearest city.",
               "Prenez en compte la ligne de ravitaillement entre une armée et sa cité alliée la plus proche. ",
               "Achte auf die Versorgungsroute von einer Armee zu ihrer nächsten Stadt. ",
               "Ten en cuenta la ruta de suministro desde un ejército a la ciudad más cercana. ",
@@ -34507,7 +34507,7 @@
               "Preste atenção à rota de suprimentos do exército à cidade mais próxima. ",
               "时刻注意部队和距离最近的城市的补给路线。",
               "時刻注意部隊和距離最近的城市的補給路線。",
-              "NeedUA Be mindful of the supply route from an army to its nearest city. "
+              "Стежте за шляхом постачання від армії до найближчого міста."
             ]
           },
           "Flags": {
@@ -34546,7 +34546,7 @@
               "Recursos no mercado custam mais com base na rota comercial para o jogador que está fazendo a venda.",
               "市场上的资源价格会受到商人的贸易路线影响。",
               "市場上的資源價格會受到商人的貿易路線影響。",
-              "NeedUA Resources on the market cost more based on the trade route to the selling player."
+              "Ціна ресурсів на ринку залежить від торгового шляху до гравця, що продає цей ресурс."
             ]
           },
           "Flags": {
@@ -34585,7 +34585,7 @@
               "Unidades militares têm zona de controle. Você não pode simplesmente se mover ao redor delas.",
               "军事单位带有控制区域，不能直接在它们附近移动。",
               "軍事單位帶有控制區域，不能直接在它們附近移動。",
-              "NeedUA Military units have zone of control. You can’t just move around them."
+              "Військові підрозділи мають зону контролю. Просто обійти їх не вийде."
             ]
           },
           "Flags": {
