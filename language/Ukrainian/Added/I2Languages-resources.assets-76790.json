@@ -850,7 +850,7 @@
               "Uma unidade deve sobreviver a 5 batalhas",
               "己方某一单位在5场战斗中生存",
               "己方某一單位在5場戰鬥中生存",
-              "NeedUA Have a unit survive 5 battles"
+              "Отримайте юніта що пережив 5 битв"
             ]
           },
           "Flags": {
@@ -889,7 +889,7 @@
               "",
               "",
               "",
-              "NeedUA "
+              ""
             ]
           },
           "Flags": {
@@ -928,7 +928,7 @@
               "Construa 200 maravilhas",
               "建造200个奇观",
               "建造200個奇觀",
-              "NeedUA Construct 200 Wonders"
+              "Збудуй 200 див світу"
             ]
           },
           "Flags": {
@@ -967,7 +967,7 @@
               "",
               "",
               "",
-              "NeedUA "
+              ""
             ]
           },
           "Flags": {
@@ -1006,7 +1006,7 @@
               "Cresça uma cidade até 20 de população",
               "城镇人口数达到20",
               "城鎮人口數達到20",
-              "NeedUA Grow a city to 20 population"
+              "Розвиньте місто до 20 населення"
             ]
           },
           "Flags": {
@@ -1045,7 +1045,7 @@
               "Capture 100 cidades inimigas",
               "占领100座敌方城市",
               "佔領100座敵方城市",
-              "NeedUA Capture 100 enemy cities"
+              "Захопіть 100 ворожих міст"
             ]
           },
           "Flags": {
@@ -1084,7 +1084,7 @@
               "Fique no top 3 de 10 jogos multijogador classificados",
               "在10场多人排位中获得前三名",
               "在10場多人排位中獲得前三名",
-              "NeedUA Place top 3 in 10 ranked multiplayer games"
+              "Ввійдіть до трійки кращих в 10 рангових багатокористувацьких матчах"
             ]
           },
           "Flags": {
@@ -1123,7 +1123,7 @@
               "Fique no top 3 de um jogo multijogador",
               "在一场多人排位中获得前三名",
               "在一場多人排位中獲得前三名",
-              "NeedUA Place top 3 in a ranked multiplayer game"
+              "Ввійдіть до трійки кращих в ранговому багатокористувацькому матчі"
             ]
           },
           "Flags": {
@@ -1162,7 +1162,7 @@
               "Conclua uma rodada de hegemonia da semana no nível de contribuição Lenda",
               "在一次争霸模式中达到传说贡献等级。",
               "在一次爭霸模式中達到傳說貢獻等級。",
-              "NeedUA Complete a weekly hegemon round at the Legend contribution level"
+              "Завершіть тижневий раунд гегемона здійснивши внесок на рівні \"Легенди\""
             ]
           },
           "Flags": {
@@ -1201,7 +1201,7 @@
               "Chegue ao 1º lugar em um jogo com todas as 13 civilizações",
               "在一场包含全部13个文明的游戏中获胜",
               "在一場包含全部13個文明的遊戲中獲勝",
-              "NeedUA Get 1st place in a game with all 13 civilizations"
+              "Здобудьте перше місце у грі кожною з 13 цивілізацій"
             ]
           },
           "Flags": {
@@ -1240,7 +1240,7 @@
               "Termine em primeiro lugar no placar de um desafio do dia",
               "在每日挑战排行榜上获得第一名",
               "在每日挑戰排行榜上獲得第一名",
-              "NeedUA Finish first place on a Daily Challenge leaderboard"
+              "Завершіть щоденний виклик на першому місці у таблиці лідерів"
             ]
           },
           "Flags": {
@@ -1279,7 +1279,7 @@
               "Termine no top 5 do placar de um desafio do dia",
               "在每日挑战排行榜上获得前五名",
               "在每日挑戰排行榜上獲得前五名",
-              "NeedUA Finish top 5 on a Daily Challenge leaderboard"
+              "Завершіть щоденний виклик серед кращих п'яти у таблиці лідерів"
             ]
           },
           "Flags": {
@@ -1318,7 +1318,7 @@
               "Conclua 3 desafios do dia consecutivos",
               "连续完成3次每日挑战",
               "連續完成3次每日挑戰",
-              "NeedUA Complete 3 straight Daily Challenges"
+              "Виконайте 3 поспіль щоденних викликів"
             ]
           },
           "Flags": {
@@ -1357,7 +1357,7 @@
               "Termine em primeiro lugar no placar do desafio do dia",
               "在每日挑战排行榜上获得第一名",
               "在每日挑戰排行榜上獲得第一名",
-              "NeedUA Be first place on the Daily Challenge leaderboard"
+              "Побувайте на першому місці в таблиці лідерів щоденного виклику"
             ]
           },
           "Flags": {
@@ -1396,7 +1396,7 @@
               "Tome 500 hexágonos inimigos com cultura",
               "通过文化占领500个敌方地块",
               "通過文化佔領500個敵方地塊",
-              "NeedUA Claim 500 enemy hexes with culture"
+              "Заволодійте п'ятиста ворожими гексами з допомогою культурно"
             ]
           },
           "Flags": {
@@ -1435,7 +1435,7 @@
               "Controle 5 cidades",
               "控制5座城市",
               "控制5座城市",
-              "NeedUA Control 5 cities"
+              "Контролюйте 5 міст"
             ]
           },
           "Flags": {
@@ -1474,7 +1474,7 @@
               "Controle 10 cidades",
               "控制10座城市",
               "控制10座城市",
-              "NeedUA Control 10 cities"
+              "Контролюйте 10 міст"
             ]
           },
           "Flags": {
@@ -1513,7 +1513,7 @@
               "Perca um jogo multijogador",
               "在一场多人游戏中战败",
               "在一場多人遊戲中戰敗",
-              "NeedUA Lose a multiplayer game"
+              "Програйте в багатокористувацькому матчі"
             ]
           },
           "Flags": {
@@ -1552,7 +1552,7 @@
               "Retomar 5 Jogos",
               "恢复5个对局",
               "恢復5個對局",
-              "NeedUA Resume 5 Games"
+              "Продовжіть 5 ігор"
             ]
           },
           "Flags": {
@@ -1591,7 +1591,7 @@
               "Cause 100 de dano com um único acerto",
               "在一次攻击中造成100点伤害",
               "在一次攻擊中造成100點傷害",
-              "NeedUA Deal 100 damage in a single hit"
+              "Завдайте 100 шкоди за один удар"
             ]
           },
           "Flags": {
@@ -1630,7 +1630,7 @@
               "Vença um jogo sem lutar com as suas unidades",
               "在不使用己方单位战斗的情况下获胜",
               "在不使用己方單位戰鬥的情況下獲勝",
-              "NeedUA Win a game without fighting with your units"
+              "Виграйте матч без жодної сутички"
             ]
           },
           "Flags": {
@@ -1669,7 +1669,7 @@
               "Elimine todos os jogadores em um mapa grande",
               "在一张大地图中击败所有玩家",
               "在一張大地圖中擊敗所有玩家",
-              "NeedUA Eliminate every player on a large map"
+              "Знищіть всіх гравців на велетенській карті"
             ]
           },
           "Flags": {
@@ -1708,7 +1708,7 @@
               "Termine em primeiro lugar no placar de uma campanha da semana",
               "在每周战役排行榜上获得第一名",
               "在每週戰役排行榜上獲得第一名",
-              "NeedUA Finish first place on a Weekly Campaign leaderboard"
+              "Завершіть тижневу кампанію на першому місці в таблиці лідерів"
             ]
           },
           "Flags": {
@@ -1747,7 +1747,7 @@
               "Fique em 1º lugar em 20 jogos multijogador classificados",
               "在20场多人排位中获得第一名",
               "在20場多人排位中獲得第一名",
-              "NeedUA Place 1st in 20 multiplayer ranked games"
+              "Фінішуйте першим в 20 багатокористувацький рангових матчах"
             ]
           },
           "Flags": {
@@ -1786,7 +1786,7 @@
               "Cresça uma cidade até 5 de população",
               "城镇人口数达到5",
               "城鎮人口數達到5",
-              "NeedUA Grow a city to 5 population"
+              "Розвиньте місто до 5 населення"
             ]
           },
           "Flags": {
@@ -1825,7 +1825,7 @@
               "Vença uma rodada de hegemonia da semana no nível de contribuição “Herói”",
               "在每周英雄等级的霸权战役中获胜",
               "在每週英雄等級的霸權戰役中獲勝",
-              "NeedUA Win a weekly hegemon round at the Hero contribution level"
+              "Виграйте тижневий раунд гегемона здійснивши внесок на рівні \"Герой\""
             ]
           },
           "Flags": {
@@ -1864,7 +1864,7 @@
               "Vença uma rodada de hegemonia da semana no nível de contribuição “Cavaleiro”",
               "在每周骑士等级的霸权战役中获胜",
               "在每週騎士等級的霸權戰役中獲勝",
-              "NeedUA Win a weekly hegemon round at the Knight contribution level"
+              "Виграйте тижневий раунд гегемона здійснивши внесок на рівні \"Лицар\""
             ]
           },
           "Flags": {
@@ -1903,7 +1903,7 @@
               "Vença uma rodada de hegemonia da semana no nível de contribuição “Escudeiro”",
               "在每周侍从等级的霸权战役中获胜",
               "在每週侍從等級的霸權戰役中獲勝",
-              "NeedUA Win a weekly hegemon round at the Squire contribution level"
+              "Виграйте тижневий раунд гегемона здійснивши внесок на рівні \"Зброєносець\""
             ]
           },
           "Flags": {
@@ -1942,7 +1942,7 @@
               "Jogue ao menos {number} jogo classificados e seja {level}% Hexcelente",
               "至少进行 {number} 场排位比赛，并且有{level}% 优胜。",
               "至少進行 {number} 場排位比賽，並且有{level}% 優勝。",
-              "NeedUA Play at least {number} ranked games and be {level}% Hexcellent"
+              "Зіграйте хоча б {number} рангових матчів і здобудьте {level}% Гексоналості"
             ]
           },
           "Flags": {
@@ -1981,7 +1981,7 @@
               "Queime a carta da Grande Biblioteca",
               "烧毁卡牌“亚历山大图书馆”",
               "燒毀卡牌“亞曆山大圖書館”",
-              "NeedUA Burn the Great Library card"
+              "Спаліть карту \"Велика Бібліотека\""
             ]
           },
           "Flags": {
@@ -2020,7 +2020,7 @@
               "Conclua a campanha inicial",
               "完成教程战役",
               "完成教程戰役",
-              "NeedUA Complete the Starter Campaign"
+              "Завершіть кампанію новачка"
             ]
           },
           "Flags": {
@@ -2059,7 +2059,7 @@
               "Vença um jogo usando apenas tecnologia antiga",
               "在仅使用古代科技的情况下获胜",
               "在僅使用古代科技的情況下獲勝",
-              "NeedUA Win a game using only Ancient technology"
+              "Виграйте матч використовуючи лише Древні технології"
             ]
           },
           "Flags": {
@@ -2098,7 +2098,7 @@
               "Uma unidade deve sobreviver a 10 batalhas",
               "己方某一单位在10场战斗中生存",
               "己方某一單位在10場戰鬥中生存",
-              "NeedUA Have a unit survive 10 battles"
+              "Отримайте юніта що пережив 10 битв"
             ]
           },
           "Flags": {
@@ -2137,7 +2137,7 @@
               "Pesquise 400 tecnologias",
               "研究400次科技",
               "研究400次科技",
-              "NeedUA Research 400 Technologies"
+              "Дослідіть 400 Технологій"
             ]
           },
           "Flags": {
@@ -2332,7 +2332,7 @@
               "Alcance classificação {loctag_name} no modo multijogador",
               "在多人游戏中达到 {loctag_name} 段位。",
               "在多人遊戲中達到 {loctag_name} 段位。",
-              "NeedUA Reach {loctag_name} rank in multiplayer"
+              "Досягніть рангу {loctag_name} в багатокористувацькому режимі"
             ]
           },
           "Flags": {
@@ -2371,7 +2371,7 @@
               "Vença uma rodada de hegemonia da semana no nível de contribuição “Lenda”",
               "在传说贡献等级赢得一次争霸模式的胜利。",
               "在傳說貢獻等級贏得一次爭霸模式的勝利。",
-              "NeedUA Win a weekly hegemon round at the Legend contribution level"
+              "Виграйте тижневий раунд гегемона здійснивши внесок на рівні \"Легенда\""
             ]
           },
           "Flags": {
@@ -2410,7 +2410,7 @@
               "Mate 25 unidades inimigas em um jogo multijogador classificado",
               "在一场多人排位内击败25个敌方单位",
               "在一場多人排位內擊敗25個敵方單位",
-              "NeedUA Kill 25 enemy units in a ranked multiplayer game"
+              "Вбийте 25 ворожих юнітів у ранговій багатокористувацькій грі"
             ]
           },
           "Flags": {
@@ -2449,7 +2449,7 @@
               "Retomar um Jogo",
               "恢复1个对局",
               "恢復1個對局",
-              "NeedUA Resume a Game"
+              "Продовжіть гру"
             ]
           },
           "Flags": {
@@ -2488,7 +2488,7 @@
               "Pilhe 50 cidades inimigas",
               "掠夺50座敌方城市",
               "掠奪50座敵方城市",
-              "NeedUA Pillage 50 enemy cities"
+              "Сплюндруйте 50 ворожих міст"
             ]
           },
           "Flags": {
@@ -2527,7 +2527,7 @@
               "Cresça uma cidade até 30 de população",
               "城镇人口数达到30",
               "城鎮人口數達到30",
-              "NeedUA Grow a city to 30 population"
+              "Розвиньте місто до 30 населення"
             ]
           },
           "Flags": {
@@ -2566,7 +2566,7 @@
               "Conclua uma 4 campanhas da semana seguidas",
               "连续完成4次每周战役",
               "連續完成4次每週戰役",
-              "NeedUA Complete 4 straight Weekly Campaigns"
+              "Виконайте 4 поспіль щотижневі виклики"
             ]
           },
           "Flags": {
@@ -2605,7 +2605,7 @@
               "Capture uma cidade inimiga",
               "占领1座敌方城市",
               "佔領1座敵方城市",
-              "NeedUA Capture an enemy city"
+              "Захопіть вороже місто"
             ]
           },
           "Flags": {
@@ -2644,7 +2644,7 @@
               "Cause 50 de dano com um único acerto",
               "在一次攻击中造成50点伤害",
               "在一次攻擊中造成50點傷害",
-              "NeedUA Deal 50 damage in a single hit"
+              "Завдайте 50 шкоди за один удар"
             ]
           },
           "Flags": {
@@ -2683,7 +2683,7 @@
               "Vença 5 rodadas de hegemonia da semana",
               "赢得5次每周霸权战役",
               "贏得5次每週霸權戰役",
-              "NeedUA Win 5 weekly hegemon rounds"
+              "Виграйте 5 тижневих раунд гегемона"
             ]
           },
           "Flags": {
@@ -2722,7 +2722,7 @@
               "Vença um jogo sem atacar com as suas unidades",
               "在不使用己方单位进攻的情况下获胜",
               "在不使用己方單位進攻的情況下獲勝",
-              "NeedUA Win a game without attacking with your units"
+              "Виграйте матч, не здійснивши жодної атаки своїми юнітами"
             ]
           },
           "Flags": {
@@ -2761,7 +2761,7 @@
               "Pilhe uma cidade inimiga",
               "掠夺1座敌方城市",
               "掠奪1座敵方城市",
-              "NeedUA Pillage an enemy city"
+              "Сплюндруйте вороже місто"
             ]
           },
           "Flags": {
@@ -2800,7 +2800,7 @@
               "",
               "",
               "",
-              "NeedUA "
+              ""
             ]
           },
           "Flags": {
@@ -2839,7 +2839,7 @@
               "Conclua um desafio do dia",
               "完成1次每日挑战",
               "完成1次每日挑戰",
-              "NeedUA Complete a Daily Challenge"
+              "Виконайте щоденний виклик"
             ]
           },
           "Flags": {
@@ -2878,7 +2878,7 @@
               "",
               "",
               "",
-              "NeedUA "
+              ""
             ]
           },
           "Flags": {
@@ -2917,7 +2917,7 @@
               "Pilhe 5 cidades inimigas em um único jogo",
               "单局游戏内掠夺5座敌方城市",
               "單局遊戲內掠奪5座敵方城市",
-              "NeedUA Pillage 5 enemy cities in a single game"
+              "Сплюндруйте 5 ворожих міст за один матч"
             ]
           },
           "Flags": {
@@ -2956,7 +2956,7 @@
               "Conclua 10 jogos multijogador classificados",
               "完成10次多人排位",
               "完成10次多人排位",
-              "NeedUA Complete 10 ranked multiplayer games"
+              "Завершіть 10 багатокористувацьких рангових матчів"
             ]
           },
           "Flags": {
@@ -2995,7 +2995,7 @@
               "Vença um jogo com apenas uma cidade",
               "在仅拥有一座城市的情况下获胜",
               "在僅擁有一座城市的情況下獲勝",
-              "NeedUA Win a game with only one city"
+              "Виграйте матч контролюючи всього одне місто"
             ]
           },
           "Flags": {
@@ -3034,7 +3034,7 @@
               "Adote 200 cívicas",
               "采用200个政令",
               "採用200個政令",
-              "NeedUA Adopt 200 Civics"
+              "Вивчіть 200 цивільних технологій"
             ]
           },
           "Flags": {
@@ -3073,7 +3073,7 @@
               "Conclua 10 desafios do dia consecutivos",
               "连续完成10次每日挑战",
               "連續完成10次每日挑戰",
-              "NeedUA Complete 10 straight Daily Challenges"
+              "Виконайте 10 поспіль щоденних викликів"
             ]
           },
           "Flags": {
@@ -3112,7 +3112,7 @@
               "Fique no top 3 de 20 jogos multijogador classificados",
               "在20场多人排位中获得前三名",
               "在20場多人排位中獲得前三名",
-              "NeedUA Place top 3 in 20 ranked multiplayer games"
+              "Фінішуйте серед трьох кращих у 20 рангових багатокористувацьких матчах"
             ]
           },
           "Flags": {
@@ -3151,7 +3151,7 @@
               "Controle 100 hexágonos",
               "控制100个地块",
               "控制100個地塊",
-              "NeedUA Control 100 hexes"
+              "Контролюйте 100 гексів"
             ]
           },
           "Flags": {
@@ -3190,7 +3190,7 @@
               "Controle 15 cidades",
               "控制15座城市",
               "控制15座城市",
-              "NeedUA Control 15 cities"
+              "Контролюйте 15 міст"
             ]
           },
           "Flags": {
@@ -3229,7 +3229,7 @@
               "Pesquise todas as 24 tecnologias em um único jogo",
               "单局游戏内研究全部24项科技",
               "單局遊戲內研究全部24項科技",
-              "NeedUA Research all 24 Techs in a single game"
+              "Дослідіть всі 24 Технології в одному матчі"
             ]
           },
           "Flags": {
@@ -3268,7 +3268,7 @@
               "",
               "",
               "",
-              "NeedUA "
+              ""
             ]
           },
           "Flags": {
@@ -3307,7 +3307,7 @@
               "Cresça uma cidade até 10 de população",
               "城镇人口数达到10",
               "城鎮人口數達到10",
-              "NeedUA Grow a city to 10 population"
+              "Розвиньте місто до 10 населення"
             ]
           },
           "Flags": {
@@ -3346,7 +3346,7 @@
               "Fique em 1º lugar de um jogo multijogador",
               "在一场多人排位中获得第一名",
               "在一場多人排位中獲得第一名",
-              "NeedUA Place 1st place in a ranked multiplayer game"
+              "Отримайте 1 місце в ранговому багатокористувацькому матчі"
             ]
           },
           "Flags": {
@@ -3385,7 +3385,7 @@
               "Vença um jogo sem pesquisar nenhuma tecnologia",
               "在不研究任何科技的情况下获胜",
               "在不研究任何科技的情況下獲勝",
-              "NeedUA Win a game without researching any technology"
+              "Виграйте матч не дослідивши жодної технології"
             ]
           },
           "Flags": {
@@ -3424,7 +3424,7 @@
               "Controle 50 hexágonos",
               "控制50个地块",
               "控制50個地塊",
-              "NeedUA Control 50 hexes"
+              "Контролюйте 50 гексів"
             ]
           },
           "Flags": {
@@ -3463,7 +3463,7 @@
               "Mate uma unidade de cada jogador em um mapa grande",
               "在一张大地图中击败过每个玩家的单位",
               "在一張大地圖中擊敗過每個玩家的單位",
-              "NeedUA Kill a unit from every player on a large map"
+              "Знищіть юніта кожного з гравців на велетенській карті"
             ]
           },
           "Flags": {
@@ -3502,7 +3502,7 @@
               "Termine em primeiro lugar no placar da campanha da semana",
               "在每周战役排行榜上获得第一名",
               "在每週戰役排行榜上獲得第一名",
-              "NeedUA Be first place on the Weekly Campaign leaderboard"
+              "Побувайте на першому місці в таблиці лідерів щотижневої кампанії"
             ]
           },
           "Flags": {
@@ -3541,7 +3541,7 @@
               "Conclua uma campanha da semana",
               "完成1次每周战役",
               "完成1次每週戰役",
-              "NeedUA Complete a Weekly Campaign"
+              "Виконайте щотижневу кампанію"
             ]
           },
           "Flags": {
@@ -3580,7 +3580,7 @@
               "Controle todas as 15 maravilhas em um único jogo",
               "单局游戏内控制全部15座奇观",
               "單局遊戲內控制全部15座奇觀",
-              "NeedUA Control all 15 Wonders in a single game"
+              "Контролюйте всі 15 див світу в одному матчі"
             ]
           },
           "Flags": {
@@ -3619,7 +3619,7 @@
               "Vença um jogo sem construir maravilhas",
               "在不建造任何奇观的情况下获胜",
               "在不建造任何奇觀的情況下獲勝",
-              "NeedUA Win a game without building any Wonders"
+              "Виграйте гру не побудувавши жодного дива світу"
             ]
           },
           "Flags": {
@@ -3658,7 +3658,7 @@
               "Berserker",
               "狂战士",
               "狂戰士",
-              "NeedUA Berserker"
+              "Берсерк"
             ]
           },
           "Flags": {
@@ -3697,7 +3697,7 @@
               "Quebrador de jogos",
               "游戏破坏者",
               "遊戲破壞者",
-              "NeedUA Breaker of Games"
+              "Руйнівник ігор"
             ]
           },
           "Flags": {
@@ -3736,7 +3736,7 @@
               "Construtor",
               "建筑师",
               "建築師",
-              "NeedUA Builder"
+              "Будівельник"
             ]
           },
           "Flags": {
@@ -3775,7 +3775,7 @@
               "O cronista",
               "史学家",
               "史學家",
-              "NeedUA Chronicler"
+              "Літописець"
             ]
           },
           "Flags": {
@@ -3814,7 +3814,7 @@
               "Cidade",
               "城市",
               "城市",
-              "NeedUA City"
+              "Мегаполіс"
             ]
           },
           "Flags": {
@@ -3853,7 +3853,7 @@
               "Conquistador",
               "征服者",
               "征服者",
-              "NeedUA Conquistador"
+              "Конкістадор"
             ]
           },
           "Flags": {
@@ -3892,7 +3892,7 @@
               "Cônsul",
               "执政官",
               "執政官",
-              "NeedUA Consul"
+              "Консул"
             ]
           },
           "Flags": {
@@ -3931,7 +3931,7 @@
               "Concorrente",
               "有力竞争者",
               "有力競爭者",
-              "NeedUA Contender"
+              "Претендент"
             ]
           },
           "Flags": {
@@ -3970,7 +3970,7 @@
               "Contribuidor",
               "贡献者",
               "貢獻者",
-              "NeedUA Contributor"
+              "Пайовик"
             ]
           },
           "Flags": {
@@ -4009,7 +4009,7 @@
               "Cosmopolita",
               "世界公民",
               "世界公民",
-              "NeedUA Cosmopolitan"
+              "Космополіт"
             ]
           },
           "Flags": {
@@ -4048,7 +4048,7 @@
               "Campeão do Dia",
               "每日冠军",
               "每日冠軍",
-              "NeedUA Daily Champion"
+              "Чемпіон дня"
             ]
           },
           "Flags": {
@@ -4087,7 +4087,7 @@
               "Concorrente do Dia",
               "日常竞争",
               "日常競爭",
-              "NeedUA Daily Contender"
+              "Претендент дня"
             ]
           },
           "Flags": {
@@ -4126,7 +4126,7 @@
               "Dever diário",
               "日常职责",
               "日常職責",
-              "NeedUA Daily Duty"
+              "Щоденний обов'язок"
             ]
           },
           "Flags": {
@@ -4165,7 +4165,7 @@
               "Vanguarda do dia",
               "日常先锋",
               "日常先鋒",
-              "NeedUA Daily Vanguard"
+              "Сьогодні попереду"
             ]
           },
           "Flags": {
@@ -4204,7 +4204,7 @@
               "Defensor da fé",
               "忠诚信徒",
               "忠誠信徒",
-              "NeedUA Defender of the Faith"
+              "Захисник віри"
             ]
           },
           "Flags": {
@@ -4243,7 +4243,7 @@
               "Domínio",
               "王国",
               "王國",
-              "NeedUA Dominion"
+              "Домініон"
             ]
           },
           "Flags": {
@@ -4282,7 +4282,7 @@
               "Império",
               "帝国",
               "帝國",
-              "NeedUA Empire"
+              "Імперія"
             ]
           },
           "Flags": {
@@ -4321,7 +4321,7 @@
               "Entrar na briga",
               "初尝败果",
               "初嘗敗果",
-              "NeedUA Enter the Fray"
+              "Кулаки сверблять, голова страждає"
             ]
           },
           "Flags": {
@@ -4360,7 +4360,7 @@
               "Carregador Épico de Jogos",
               "史诗级游戏加载器",
               "史詩級遊戲加載器",
-              "NeedUA Epic Loader of Games"
+              "Епічний завантажувач ігор"
             ]
           },
           "Flags": {
@@ -4399,7 +4399,7 @@
               "Exagero épico",
               "会心一击",
               "會心一擊",
-              "NeedUA Epic Overkill"
+              "Епічне Понадвбивство"
             ]
           },
           "Flags": {
@@ -4438,7 +4438,7 @@
               "Pacifista épico",
               "传奇和平主义者",
               "傳奇和平主義者",
-              "NeedUA Epic Peacenik"
+              "Епічний Миротворець"
             ]
           },
           "Flags": {
@@ -4477,7 +4477,7 @@
               "Belicista épico",
               "传奇战斗狂",
               "傳奇戰鬥狂",
-              "NeedUA Epic Warmonger"
+              "Епічний Агресор"
             ]
           },
           "Flags": {
@@ -4516,7 +4516,7 @@
               "Primeiro do seu nome",
               "第一任国王",
               "第一任國王",
-              "NeedUA First of His Name"
+              "Ім'я моє - Перший"
             ]
           },
           "Flags": {
@@ -4555,7 +4555,7 @@
               "Grandeza",
               "传奇人物",
               "傳奇人物",
-              "NeedUA Greatness"
+              "Велич"
             ]
           },
           "Flags": {
@@ -4594,7 +4594,7 @@
               "Aldeia",
               "村庄",
               "村莊",
-              "NeedUA Hamlet"
+              "Хутір"
             ]
           },
           "Flags": {
@@ -4633,7 +4633,7 @@
               "Herói hegemônico",
               "霸权英雄",
               "霸權英雄",
-              "NeedUA Hegemonic Hero"
+              "Герой-гегемон"
             ]
           },
           "Flags": {
@@ -4672,7 +4672,7 @@
               "Cavaleiro hegemônico",
               "霸权骑士",
               "霸權騎士",
-              "NeedUA Hegemonic Knight"
+              "Лицар-гегемон"
             ]
           },
           "Flags": {
@@ -4711,7 +4711,7 @@
               "Escudeiro hegemônico",
               "霸权侍从",
               "霸權侍從",
-              "NeedUA Hegemonic Squire"
+              "Зброєносець-гегемон"
             ]
           },
           "Flags": {
@@ -4750,7 +4750,7 @@
               "{level}% Hexcelente",
               "{level}% 优胜",
               "{level}% 優勝",
-              "NeedUA {level}% Hexcellent"
+              "Гексоналість"
             ]
           },
           "Flags": {
@@ -4789,7 +4789,7 @@
               "Coração partido do historiador",
               "心碎的历史学家",
               "心碎的歷史學家",
-              "NeedUA Historian's Heartbreak"
+              "Розбите серце історика"
             ]
           },
           "Flags": {
@@ -4828,7 +4828,7 @@
               "História sendo escrita",
               "缔造历史",
               "締造歷史",
-              "NeedUA History in the Making"
+              "Історія твориться зараз"
             ]
           },
           "Flags": {
@@ -4867,7 +4867,7 @@
               "Ignorante",
               "传统",
               "傳統",
-              "NeedUA Ignorant"
+              "Невіглас"
             ]
           },
           "Flags": {
@@ -4906,7 +4906,7 @@
               "Imortal",
               "长生军",
               "長生軍",
-              "NeedUA Immortal"
+              "Безсмертний"
             ]
           },
           "Flags": {
@@ -4945,7 +4945,7 @@
               "Inovador",
               "发明家",
               "發明家",
-              "NeedUA Innovator"
+              "Новатор"
             ]
           },
           "Flags": {
@@ -4984,7 +4984,7 @@
               "Apoiador",
               "支持者",
               "支持者",
-              "NeedUA Backer"
+              "Прикриваю"
             ]
           },
           "Flags": {
@@ -5023,7 +5023,7 @@
               "Conselho",
               "议员",
               "議員",
-              "NeedUA Council"
+              "Радник"
             ]
           },
           "Flags": {
@@ -5062,7 +5062,7 @@
               "Fundador",
               "建造者",
               "建造者",
-              "NeedUA Founder"
+              "Фундатор"
             ]
           },
           "Flags": {
@@ -5101,7 +5101,7 @@
               "Colono",
               "定居者",
               "定居者",
-              "NeedUA Settler"
+              "Поселенець"
             ]
           },
           "Flags": {
@@ -5140,7 +5140,7 @@
               "Classificação: {loctag_name}",
               "{loctag_name} 段位",
               "{loctag_name} 段位",
-              "NeedUA {loctag_name} Rank"
+              "{loctag_name} ранг"
             ]
           },
           "Flags": {
@@ -5179,7 +5179,7 @@
               "Hegemonia lendária",
               "传奇霸主",
               "傳奇霸主",
-              "NeedUA Legendary Hegemon"
+              "Легендарний Гегемон"
             ]
           },
           "Flags": {
@@ -5218,7 +5218,7 @@
               "Coração de leão",
               "狮心战士",
               "獅心戰士",
-              "NeedUA Lionheart"
+              "Левове Серце"
             ]
           },
           "Flags": {
@@ -5257,7 +5257,7 @@
               "Carregador de Jogos",
               "游戏加载器",
               "遊戲加載器",
-              "NeedUA Loader of Games"
+              "Завантажувач ігор"
             ]
           },
           "Flags": {
@@ -5296,7 +5296,7 @@
               "Saqueador",
               "掠夺者",
               "掠奪者",
-              "NeedUA Marauder"
+              "Мародер"
             ]
           },
           "Flags": {
@@ -5335,7 +5335,7 @@
               "Metrópole",
               "大都会",
               "大都會",
-              "NeedUA Metropolis"
+              "Метрополія"
             ]
           },
           "Flags": {
@@ -5374,7 +5374,7 @@
               "Marechal mensal",
               "月度元帅",
               "月度元帥",
-              "NeedUA Monthly Marshal"
+              "Головнокомандувач місяця"
             ]
           },
           "Flags": {
@@ -5413,7 +5413,7 @@
               "Ocupante",
               "占领者",
               "佔領者",
-              "NeedUA Occupier"
+              "Окупант"
             ]
           },
           "Flags": {
@@ -5452,7 +5452,7 @@
               "Exagero",
               "暴击",
               "暴擊",
-              "NeedUA Overkill"
+              "Понадвбивство"
             ]
           },
           "Flags": {
@@ -5491,7 +5491,7 @@
               "Paradigma",
               "楷模",
               "楷模",
-              "NeedUA Paragon"
+              "Взірець"
             ]
           },
           "Flags": {
@@ -5530,7 +5530,7 @@
               "Pacifista",
               "和平主义者",
               "和平主義者",
-              "NeedUA Peacenik"
+              "Миротворець"
             ]
           },
           "Flags": {
@@ -5569,7 +5569,7 @@
               "Destruição",
               "焚灭",
               "焚滅",
-              "NeedUA Raze"
+              "Знищено вщент"
             ]
           },
           "Flags": {
@@ -5608,7 +5608,7 @@
               "Alcance o nível {level}",
               "达到{level}级",
               "達到{level}級",
-              "NeedUA Reach Level {level}"
+              "Досягнуто рівня {level}"
             ]
           },
           "Flags": {
@@ -5647,7 +5647,7 @@
               "Chamada",
               "点名",
               "點名",
-              "NeedUA Roll Call"
+              "Перекличка"
             ]
           },
           "Flags": {
@@ -5686,7 +5686,7 @@
               "O acadêmico",
               "学者",
               "學者",
-              "NeedUA Scholar"
+              "Дослідник"
             ]
           },
           "Flags": {
@@ -5725,7 +5725,7 @@
               "Terra devastada",
               "焦土",
               "焦土",
-              "NeedUA Scorched Earth"
+              "Випалена земля"
             ]
           },
           "Flags": {
@@ -5764,7 +5764,7 @@
               "Comandante experiente",
               "高级指挥官",
               "高級指揮官",
-              "NeedUA Seasoned Commander"
+              "Досвідчений командир"
             ]
           },
           "Flags": {
@@ -5803,7 +5803,7 @@
               "Cidade brilhante na montanha",
               "山巅城市",
               "山巔城市",
-              "NeedUA Shining City on a Hill"
+              "Місто, що стоїть на верховині гори"
             ]
           },
           "Flags": {
@@ -5842,7 +5842,7 @@
               "Estadista",
               "政治家",
               "政治家",
-              "NeedUA Statesman"
+              "Державник"
             ]
           },
           "Flags": {
@@ -5881,7 +5881,7 @@
               "Resoluto",
               "坚持不懈",
               "堅持不懈",
-              "NeedUA Steadfast"
+              "Непохитний"
             ]
           },
           "Flags": {
@@ -5920,7 +5920,7 @@
               "Estrategista",
               "战略大师",
               "戰略大師",
-              "NeedUA Stratego"
+              "Стратег"
             ]
           },
           "Flags": {
@@ -5959,7 +5959,7 @@
               "O sol nunca se põe",
               "日不落帝国",
               "日不落帝國",
-              "NeedUA Sun Never Sets"
+              "Сонце ніколи на заходить"
             ]
           },
           "Flags": {
@@ -5998,7 +5998,7 @@
               "Superpoder",
               "超级大国",
               "超級大國",
-              "NeedUA Superpower"
+              "Суперсила"
             ]
           },
           "Flags": {
@@ -6037,7 +6037,7 @@
               "Sede de conhecimento",
               "渴望知识",
               "渴望知識",
-              "NeedUA Thirst for Knowledge"
+              "Спрага до знань"
             ]
           },
           "Flags": {
@@ -6076,7 +6076,7 @@
               "Campeão do torneio",
               "锦标赛冠军",
               "錦標賽冠軍",
-              "NeedUA Tournament Champion"
+              "Чемпіон турніру"
             ]
           },
           "Flags": {
@@ -6115,7 +6115,7 @@
               "Povoado",
               "小镇",
               "小鎮",
-              "NeedUA Town"
+              "Містечко"
             ]
           },
           "Flags": {
@@ -6154,7 +6154,7 @@
               "Triunfante",
               "首次胜利",
               "首次勝利",
-              "NeedUA Triumphant"
+              "Переможенька"
             ]
           },
           "Flags": {
@@ -6193,7 +6193,7 @@
               "Troglodita",
               "原始人",
               "原始人",
-              "NeedUA Troglodyte"
+              "Печерна людина"
             ]
           },
           "Flags": {
@@ -6232,7 +6232,7 @@
               "Império vasto",
               "宏伟帝国",
               "宏偉帝國",
-              "NeedUA Vast Empire"
+              "Неосяжна імперія"
             ]
           },
           "Flags": {
@@ -6271,7 +6271,7 @@
               "Belicista",
               "战斗狂",
               "戰鬥狂",
-              "NeedUA Warmonger"
+              "Агресор"
             ]
           },
           "Flags": {
@@ -6310,7 +6310,7 @@
               "Vanguarda da semana",
               "周常先锋",
               "周常先鋒",
-              "NeedUA Weekly Vanguard"
+              "Цього тижня попереду"
             ]
           },
           "Flags": {
@@ -6349,7 +6349,7 @@
               "Guerreiro da semana",
               "周常勇士",
               "周常勇士",
-              "NeedUA Weekly Warrior"
+              "Воїн тижня"
             ]
           },
           "Flags": {
@@ -6388,7 +6388,7 @@
               "Maravilhoso",
               "无奇不有",
               "無奇不有",
-              "NeedUA Wonderful"
+              "Дивовижний"
             ]
           },
           "Flags": {
@@ -6427,7 +6427,7 @@
               "Sem maravilhas",
               "朴实无华",
               "樸實無華",
-              "NeedUA Wonderless"
+              "Мене не здивуєш"
             ]
           },
           "Flags": {
@@ -69022,7 +69022,7 @@
               "Eu deveria construir um barco",
               "我需要建造一艘舰船",
               "我需要建造一艘艦船",
-              "NeedUA I Should Build a Boat"
+              "Я повинен збудувати човен"
             ]
           },
           "Flags": {
@@ -69061,7 +69061,7 @@
               "Construir um barco",
               "建造一艘舰船",
               "建造一艘艦船",
-              "NeedUA Build a boat"
+              "Побудуйте човен"
             ]
           },
           "Flags": {
@@ -69100,7 +69100,7 @@
               "Colonial",
               "殖民者",
               "殖民者",
-              "NeedUA Colonial"
+              "Колоніально"
             ]
           },
           "Flags": {
@@ -69139,7 +69139,7 @@
               "Construa uma cidade em outro continente",
               "在另一个大陆建立一座城市",
               "在另一個大陸建立一座城市",
-              "NeedUA Build a city on another continent"
+              "Побудуйте місто на іншому континенті"
             ]
           },
           "Flags": {
@@ -69178,7 +69178,7 @@
               "Burninator",
               "火焰使者",
               "火焰使者",
-              "NeedUA Burninator"
+              "Спалювач"
             ]
           },
           "Flags": {
@@ -69217,7 +69217,7 @@
               "Pilhe 5 Maravilhas e queime 5 cartas de Maravilhas em uma partida",
               "掠夺5座奇观并在一局中烧毁5张奇观卡",
               "掠奪5座奇觀並在一局中燒毀5張奇觀卡",
-              "NeedUA Pillage 5 Wonders and burn 5 Wonder cards in a game"
+              "Сплюндруйте 5 див світу і спаліть 5 карт \"Диво світу\" за один матч"
             ]
           },
           "Flags": {
@@ -71206,7 +71206,7 @@
               "Superpotência Polar",
               "极地超能力",
               "極地超能力",
-              "NeedUA Polar Super Power"
+              "Полярна суперсила"
             ]
           },
           "Flags": {
@@ -71245,7 +71245,7 @@
               "Controle 5 hexágonos de tundra",
               "控制5个冻原地块",
               "控制5個凍原地塊",
-              "NeedUA Control 5 tundra hexes"
+              "Контролюйте 5 гексів тундри"
             ]
           },
           "Flags": {
@@ -71284,7 +71284,7 @@
               "Adorado",
               "受爱戴者",
               "受愛戴者",
-              "NeedUA Beloved"
+              "Обожнюваний"
             ]
           },
           "Flags": {
@@ -71362,7 +71362,7 @@
               "Marmota",
               "啄木鸟",
               "啄木鳥",
-              "NeedUA Woodchuck"
+              "Бобер"
             ]
           },
           "Flags": {
@@ -71401,7 +71401,7 @@
               "Controle 10 serrarias",
               "控制10个锯木厂",
               "控制10個鋸木廠",
-              "NeedUA Control 10 lumbermills"
+              "Контролюйте 10 дроварень"
             ]
           },
           "Flags": {
