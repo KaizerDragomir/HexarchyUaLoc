@@ -23,13 +23,14 @@ class LocApp(tk.Tk):
         self.current_selection_index = -1
         self.ref_text_widgets = []  # Store references to reference text widgets
         self.category_expansion_state = {} # {cat_name: bool}
+        self.favorite_searches = []
         
         self.setup_ui()
         self._create_menu()
         self._bind_shortcuts()
         
         self.protocol("WM_DELETE_WINDOW", self.on_exit)
-        self._load_last_language()
+        self._load_last_session()
 
     def setup_ui(self):
         """Initializes the main user interface components."""
@@ -50,9 +51,17 @@ class LocApp(tk.Tk):
         
         self.search_var = tk.StringVar()
         self.search_var.trace_add("write", lambda *args: self.apply_filters())
-        self.search_entry = tk.Entry(search_frame, textvariable=self.search_var)
-        self.search_entry.pack(fill=tk.X, padx=5, pady=2)
         
+        entry_frame = tk.Frame(search_frame)
+        entry_frame.pack(fill=tk.X, padx=5, pady=2)
+        
+        self.search_entry = tk.Entry(entry_frame, textvariable=self.search_var)
+        self.search_entry.pack(side=tk.LEFT, fill=tk.X, expand=True)
+        
+        self.fav_btn = tk.Button(entry_frame, text="★", command=self.add_to_favorites, width=2)
+        self.fav_btn.pack(side=tk.RIGHT, padx=(2, 0))
+        
+        tk.Button(search_frame, text="Favourite Searches...", command=self.show_favorites).pack(fill=tk.X, padx=5, pady=2)
         tk.Button(search_frame, text="Filter by Category...", command=self.open_category_filter).pack(fill=tk.X, padx=5, pady=2)
         
         self.hide_translated_var = tk.BooleanVar(value=False)
@@ -173,12 +182,8 @@ class LocApp(tk.Tk):
         self.bind("<Control-s>", lambda e: self.save_file())
         self.bind("<Control-t>", lambda e: self.toggle_hide_translated())
 
-    def toggle_hide_translated(self):
-        self.hide_translated_var.set(not self.hide_translated_var.get())
-        self.apply_filters()
-
-    def _load_last_language(self):
-        """Attempts to load the last used language on startup."""
+    def _load_last_session(self):
+        """Attempts to load the last used language and session data on startup."""
         config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "last_session.json")
         if not os.path.exists(config_path):
             return
@@ -187,6 +192,7 @@ class LocApp(tk.Tk):
             with open(config_path, "r", encoding="utf-8") as f:
                 config = json.load(f)
                 last_path = config.get("last_file_path")
+                self.favorite_searches = config.get("favorite_searches", [])
                 
             if last_path and os.path.exists(last_path):
                 success, error = self.model.load_json(last_path)
@@ -196,6 +202,65 @@ class LocApp(tk.Tk):
                     print(f"Failed to auto-load last language: {error}")
         except Exception as e:
             print(f"Error reading last_session.json: {e}")
+
+    def add_to_favorites(self):
+        """Adds current search string to favorites."""
+        search_text = self.search_var.get().strip()
+        if not search_text:
+            return
+            
+        if search_text not in self.favorite_searches:
+            self.favorite_searches.append(search_text)
+            messagebox.showinfo("Favorites", f"Added '{search_text}' to favorites.")
+        else:
+            messagebox.showinfo("Favorites", f"'{search_text}' is already in favorites.")
+
+    def show_favorites(self):
+        """Displays a dialog to select from favorite searches."""
+        if not self.favorite_searches:
+            messagebox.showinfo("Favorites", "No favorite searches yet.")
+            return
+
+        dialog = tk.Toplevel(self)
+        dialog.title("Favorite Searches")
+        dialog.geometry("300x400")
+        dialog.transient(self)
+        dialog.grab_set()
+
+        tk.Label(dialog, text="Select a favorite search:", font=("Arial", 10, "bold")).pack(pady=10)
+        
+        listbox = tk.Listbox(dialog, font=("Arial", 10))
+        listbox.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)
+        
+        for fav in self.favorite_searches:
+            listbox.insert(tk.END, fav)
+        
+        def apply_fav():
+            selection = listbox.curselection()
+            if selection:
+                self.search_var.set(self.favorite_searches[selection[0]])
+                dialog.destroy()
+        
+        def remove_fav():
+            selection = listbox.curselection()
+            if selection:
+                idx = selection[0]
+                self.favorite_searches.pop(idx)
+                listbox.delete(idx)
+        
+        btn_frame = tk.Frame(dialog)
+        btn_frame.pack(fill=tk.X, pady=10)
+        
+        tk.Button(btn_frame, text="Apply", command=apply_fav, width=8).pack(side=tk.LEFT, padx=10)
+        tk.Button(btn_frame, text="Remove", command=remove_fav, width=8).pack(side=tk.LEFT, padx=10)
+        tk.Button(btn_frame, text="Close", command=dialog.destroy, width=8).pack(side=tk.RIGHT, padx=10)
+        
+        listbox.bind("<Double-Button-1>", lambda e: apply_fav())
+
+    def toggle_hide_translated(self):
+        self.hide_translated_var.set(not self.hide_translated_var.get())
+        self.apply_filters()
+
 
     def load_language(self):
         if self.model.is_modified:
@@ -890,13 +955,18 @@ class LocApp(tk.Tk):
                 return
         
         # Save last session info
-        if self.model.file_path:
-            config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "last_session.json")
-            try:
-                with open(config_path, "w", encoding="utf-8") as f:
-                    json.dump({"last_file_path": self.model.file_path}, f, indent=2)
-            except Exception as e:
-                print(f"Failed to save session info: {e}")
+        config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "last_session.json")
+        try:
+            session_data = {
+                "favorite_searches": self.favorite_searches
+            }
+            if self.model.file_path:
+                session_data["last_file_path"] = self.model.file_path
+                
+            with open(config_path, "w", encoding="utf-8") as f:
+                json.dump(session_data, f, indent=2)
+        except Exception as e:
+            print(f"Failed to save session info: {e}")
                 
         self.destroy()
 
