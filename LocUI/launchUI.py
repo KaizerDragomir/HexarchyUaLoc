@@ -338,41 +338,15 @@ class LocApp(tk.Tk):
             
             is_translated = self.model.is_term_translated(i, self.model.target_lang_index)
             
+            # 1. Update full category stats regardless of filters
             if cat_name not in category_full_stats:
                 category_full_stats[cat_name] = [0, 0]
             category_full_stats[cat_name][1] += 1
             if is_translated:
                 category_full_stats[cat_name][0] += 1
 
-            # Category filter
-            if cat_name not in self.model.selected_categories:
-                continue
-            
-            # Search filters: term name, target translation, or reference translations
-            found_in_search = False
-            if not search_term:
-                found_in_search = True
-            else:
-                # Search in term name
-                if search_term in term_name.lower():
-                    found_in_search = True
-                else:
-                    # Search in target translation
-                    target_val = self.model.get_translation(i, self.model.target_lang_index).lower()
-                    if search_term in target_val:
-                        found_in_search = True
-                    else:
-                        # Search in reference translations
-                        for ref_idx in self.model.reference_lang_indices:
-                            ref_val = self.model.get_translation(i, ref_idx).lower()
-                            if search_term in ref_val:
-                                found_in_search = True
-                                break
-            
-            if not found_in_search:
-                continue
-                
-            if hide_translated and is_translated:
+            # 2. Check filters
+            if not self._is_term_visible(i, term_name, cat_name, is_translated, search_term, hide_translated):
                 continue
             
             if cat_name not in category_map:
@@ -431,6 +405,40 @@ class LocApp(tk.Tk):
         values = self.term_tree.item(item, "values")
         if values:
             self.category_expansion_state[values[0]] = True
+
+    def _is_term_visible(self, i, term_name, cat_name, is_translated, search_term, hide_translated):
+        """Checks if a term should be visible based on current filters."""
+        # Category filter
+        if cat_name not in self.model.selected_categories:
+            return False
+            
+        # Search filters: term name, target translation, or reference translations
+        if search_term and not self._matches_search(i, term_name, search_term):
+            return False
+                
+        if hide_translated and is_translated:
+            return False
+            
+        return True
+
+    def _matches_search(self, i, term_name, search_term):
+        """Checks if search term matches term name or any selected language translations."""
+        # Search in term name
+        if search_term in term_name.lower():
+            return True
+            
+        # Search in target translation
+        target_val = self.model.get_translation(i, self.model.target_lang_index).lower()
+        if search_term in target_val:
+            return True
+            
+        # Search in reference translations
+        for ref_idx in self.model.reference_lang_indices:
+            ref_val = self.model.get_translation(i, ref_idx).lower()
+            if search_term in ref_val:
+                return True
+                
+        return False
 
     def on_tree_close(self, event):
         """Handles category collapse manually."""
