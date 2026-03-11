@@ -348,7 +348,28 @@ class LocApp(tk.Tk):
             if cat_name not in self.model.selected_categories:
                 continue
             
-            if search_term and search_term not in term_name.lower():
+            # Search filters: term name, target translation, or reference translations
+            found_in_search = False
+            if not search_term:
+                found_in_search = True
+            else:
+                # Search in term name
+                if search_term in term_name.lower():
+                    found_in_search = True
+                else:
+                    # Search in target translation
+                    target_val = self.model.get_translation(i, self.model.target_lang_index).lower()
+                    if search_term in target_val:
+                        found_in_search = True
+                    else:
+                        # Search in reference translations
+                        for ref_idx in self.model.reference_lang_indices:
+                            ref_val = self.model.get_translation(i, ref_idx).lower()
+                            if search_term in ref_val:
+                                found_in_search = True
+                                break
+            
+            if not found_in_search:
                 continue
                 
             if hide_translated and is_translated:

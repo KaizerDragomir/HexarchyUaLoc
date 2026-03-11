@@ -27,7 +27,7 @@ This application is designed to provide a graphical user interface for managing 
     - **Editing Area**: Shows the selected term, its category, and translation fields.
     - **Reference Languages**: Display other languages (English by default, others selectable) side-by-side for reference. These are **read-only**.
 4. **Search and Filter**: 
-    - Search for terms or specific translations in the current language.
+    - Search for terms, specific translations in the current language, or reference language translations.
     - Filter terms by **Category**. Use a **checkbox group** for multiple category selection.
 5. **Editing**: Interface to update the translation for a given term.
     - **Editable**: Only the translation field is editable. Terms and reference languages are locked.
